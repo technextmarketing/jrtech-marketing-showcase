@@ -1,6 +1,6 @@
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{font-family:'Inter',system-ui,sans-serif;background:#F8F9FC;color:#1C1C2E;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+body{font-family:'Open Sans',system-ui,sans-serif;background:#F8F9FC;color:#1C1C2E;overflow-x:hidden;-webkit-font-smoothing:antialiased}
 ::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:#060A15}::-webkit-scrollbar-thumb{background:linear-gradient(180deg,#60AFCF,#86CADA);border-radius:2px}
 p,li,td,th{line-height:1.85}
 
@@ -8,9 +8,9 @@ p,li,td,th{line-height:1.85}
 .shimmer{animation:shimmer 3s ease-in-out infinite}
 
 /* ── Logo Treatment (matches jrtech-website) ── */
-.logo-jr{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.5rem;color:#86CADA}
-.logo-dash{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.5rem;color:#86CADA}
-.logo-tech{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.5rem;color:#fff}
+.logo-jr{font-family:'Open Sans',sans-serif;font-weight:700;font-size:1.5rem;color:#86CADA}
+.logo-dash{font-family:'Open Sans',sans-serif;font-weight:700;font-size:1.5rem;color:#86CADA}
+.logo-tech{font-family:'Open Sans',sans-serif;font-weight:700;font-size:1.5rem;color:#fff}
 .logo-sub{font-size:.72rem;font-weight:400;color:rgba(255,255,255,.42);letter-spacing:.1em;margin-left:8px;text-transform:uppercase;align-self:center}
 
 /* ── Hero Badge (pill with pulse dot) ── */
@@ -53,7 +53,7 @@ p,li,td,th{line-height:1.85}
 .big-stat{font-family:'Bebas Neue',cursive;font-size:3.5rem;line-height:1;color:#60AFCF}
 
 /* Buttons */
-.btn{position:relative;overflow:hidden;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:'Space Grotesk',sans-serif;border-radius:10px;transition:transform .35s cubic-bezier(.34,1.56,.64,1),box-shadow .3s ease,background-color .28s ease,color .22s ease,border-color .22s ease}
+.btn{position:relative;overflow:hidden;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:'Open Sans',sans-serif;border-radius:10px;transition:transform .35s cubic-bezier(.34,1.56,.64,1),box-shadow .3s ease,background-color .28s ease,color .22s ease,border-color .22s ease}
 .btn::before{content:'';position:absolute;top:0;left:-120%;width:60%;height:100%;background:linear-gradient(105deg,transparent 20%,rgba(255,255,255,.28) 50%,transparent 80%);transform:skewX(-18deg);transition:left .55s ease;pointer-events:none}
 .btn:hover::before{left:140%}
 .btn:hover{transform:translateY(-3px) scale(1.02)}
@@ -73,8 +73,8 @@ p,li,td,th{line-height:1.85}
 .img-card{position:relative;border-radius:12px;overflow:hidden;border:1px solid rgba(96,175,207,.18);background:#0F1528;box-shadow:0 12px 34px rgba(0,0,0,.4);transition:transform .45s cubic-bezier(.34,1.4,.64,1),box-shadow .45s ease,border-color .35s ease}
 .img-card img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover}
 .img-card:hover{transform:translateY(-7px);border-color:rgba(96,175,207,.55);box-shadow:0 26px 56px rgba(0,0,0,.55),0 0 0 1px rgba(96,175,207,.20)}
-.img-card .vlabel{position:absolute;left:0;right:0;bottom:0;padding:30px 18px 16px;background:linear-gradient(to top,rgba(4,7,18,.9),transparent);color:#fff;font-family:'Inter',sans-serif;font-size:1rem;font-weight:500;letter-spacing:.01em;pointer-events:none}
-.img-card .vbadge{position:absolute;top:13px;left:13px;z-index:2;font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:#fff;background:linear-gradient(135deg,#2A7A9F,#5BAFC4);padding:4px 10px;border-radius:4px;font-weight:700;font-family:'Inter',sans-serif}
+.img-card .vlabel{position:absolute;left:0;right:0;bottom:0;padding:30px 18px 16px;background:linear-gradient(to top,rgba(4,7,18,.9),transparent);color:#fff;font-family:'Open Sans',sans-serif;font-size:1rem;font-weight:500;letter-spacing:.01em;pointer-events:none}
+.img-card .vbadge{position:absolute;top:13px;left:13px;z-index:2;font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:#fff;background:linear-gradient(135deg,#2A7A9F,#5BAFC4);padding:4px 10px;border-radius:4px;font-weight:700;font-family:'Open Sans',sans-serif}
 
 /* Brand cards (on dark sections) */
 .brand-card{background:rgba(255,255,255,.04);border:1px solid rgba(96,175,207,.14);border-radius:16px;padding:28px;transition:transform .4s cubic-bezier(.34,1.4,.64,1),box-shadow .4s ease,border-color .3s ease;position:relative;overflow:hidden}
@@ -157,7 +157,7 @@ p,li,td,th{line-height:1.85}
 .pillar-num{transition:color .4s ease,transform .4s ease}
 .pillar-card:hover .pillar-num{color:rgba(96,175,207,.85);transform:translateZ(30px)}
 
-h2[style*="Space Grotesk"]{font-size:clamp(2rem,4.6vw,3.4rem)!important;line-height:1.12}
+h2[style*="Open Sans"]{font-size:clamp(2rem,4.6vw,3.4rem)!important;line-height:1.12}
 .hero-bg h1,header.hero-bg h1{font-size:clamp(2.6rem,7vw,5rem)!important;line-height:1.08}
 
 .reveal .orange-bar,.reveal-l .orange-bar,.reveal-r .orange-bar,.reveal-s .orange-bar{width:0;transition:width .9s cubic-bezier(.2,.7,.3,1) .25s}
@@ -182,7 +182,7 @@ h2[style*="Space Grotesk"]{font-size:clamp(2rem,4.6vw,3.4rem)!important;line-hei
 @keyframes scrollX{to{transform:translateX(-50%)}}
 .marquee-track{display:inline-flex;white-space:nowrap;animation:scrollX 32s linear infinite;will-change:transform}
 .marquee:hover .marquee-track{animation-play-state:paused}
-.marquee-track span{font-family:'Space Grotesk',sans-serif;font-size:1rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.55);padding:0 28px;display:inline-flex;align-items:center}
+.marquee-track span{font-family:'Open Sans',sans-serif;font-size:1rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.55);padding:0 28px;display:inline-flex;align-items:center}
 .marquee-track span::after{content:'✦';color:rgba(96,175,207,.4);margin-left:28px;font-size:.6rem}
 
 #toTop{position:fixed;bottom:24px;right:24px;width:46px;height:46px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#3E8FAF,#7ECCE0);color:#fff;box-shadow:0 8px 24px rgba(96,175,207,.4);cursor:pointer;opacity:0;transform:translateY(20px) scale(.8);transition:opacity .35s ease,transform .35s cubic-bezier(.34,1.56,.64,1);z-index:55;border:none}
