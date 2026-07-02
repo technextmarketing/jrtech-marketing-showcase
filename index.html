@@ -11,7 +11,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet"/>
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
-tailwind.config={theme:{extend:{colors:{steel:{'DEFAULT':'#080C18','light':'#0F1528','mid':'#141A32'},orange:{'DEFAULT':'#F97316','light':'#FB923C','pale':'#FFF7ED'},silver:{'DEFAULT':'#F8F9FC','dark':'#EEF2F8','deeper':'#E2E8F4'}},fontFamily:{display:['Space Grotesk','system-ui','sans-serif'],body:['Inter','system-ui','sans-serif'],alt:['Plus Jakarta Sans','system-ui','sans-serif']}}}}
+tailwind.config={theme:{extend:{colors:{steel:{'DEFAULT':'#080C18','light':'#0F1528','mid':'#141A32'},metal:{'DEFAULT':'#60AFCF','light':'#86CADA','pale':'#EDF5F8'},silver:{'DEFAULT':'#F8F9FC','dark':'#EEF2F8','deeper':'#E2E8F4'}},fontFamily:{display:['Space Grotesk','system-ui','sans-serif'],body:['Inter','system-ui','sans-serif'],alt:['Plus Jakarta Sans','system-ui','sans-serif']}}}}
 </script>
 <link rel="stylesheet" href="styles.css?v=1"/>
 </head>
@@ -21,10 +21,10 @@ tailwind.config={theme:{extend:{colors:{steel:{'DEFAULT':'#080C18','light':'#0F1
 <button id="toTop" aria-label="Back to top"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/></svg></button>
 
 <!-- NAV -->
-<nav class="fixed top-0 left-0 right-0 z-50 px-6 lg:px-12 py-4" id="nav" style="background:rgba(8,12,24,.55);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid rgba(249,115,22,.18)">
+<nav class="fixed top-0 left-0 right-0 z-50 px-6 lg:px-12 py-4" id="nav" style="background:rgba(8,12,24,.55);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid rgba(96,175,207,.18)">
   <div class="max-w-6xl mx-auto flex items-center justify-between">
     <a href="https://technextsg.github.io/jrtech-website/" target="_blank" class="flex items-center gap-2" style="text-decoration:none">
-      <span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.3rem;color:#F97316">JR</span><span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.3rem;color:#fff">-Tech</span>
+      <span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.3rem;color:#86CADA">JR</span><span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.3rem;color:#fff">-Tech</span>
       <span style="font-size:.7rem;color:rgba(255,255,255,.4);letter-spacing:.08em;text-transform:uppercase;margin-left:4px">Solution</span>
     </a>
     <div class="flex items-center gap-4 md:gap-8">
@@ -40,10 +40,10 @@ tailwind.config={theme:{extend:{colors:{steel:{'DEFAULT':'#080C18','light':'#0F1
   <div class="hero-overlay"></div>
   <div class="grid-field"></div>
   <div id="hero-inner" class="relative z-10 text-center px-6 max-w-4xl mx-auto pt-28 pb-20">
-    <div class="inline-flex items-center gap-3 border border-[rgba(249,115,22,.4)] bg-[rgba(249,115,22,.08)] backdrop-blur-sm px-6 py-2.5 mb-9">
-      <span class="shimmer"><svg viewBox="0 0 24 24" fill="#F97316" style="width:13px;height:13px"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></span>
-      <span class="text-[11px] tracking-[.25em] uppercase font-medium" style="color:#F97316">Digital Marketing Showcase · 2026</span>
-      <span class="shimmer"><svg viewBox="0 0 24 24" fill="#F97316" style="width:13px;height:13px"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></span>
+    <div class="inline-flex items-center gap-3 border border-[rgba(96,175,207,.4)] bg-[rgba(96,175,207,.08)] backdrop-blur-sm px-6 py-2.5 mb-9">
+      <span class="shimmer"><svg viewBox="0 0 24 24" fill="#86CADA" style="width:13px;height:13px"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></span>
+      <span class="text-[11px] tracking-[.25em] uppercase font-medium" style="color:#86CADA">Digital Marketing Showcase · 2026</span>
+      <span class="shimmer"><svg viewBox="0 0 24 24" fill="#86CADA" style="width:13px;height:13px"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></span>
     </div>
     <p class="text-white/55 text-[11px] tracking-[.3em] uppercase mb-5">A Showcase for</p>
     <h1 class="tech-glow text-white text-4xl md:text-6xl font-semibold leading-[1.12] mb-6" style="font-family:'Space Grotesk',sans-serif">
@@ -80,7 +80,7 @@ tailwind.config={theme:{extend:{colors:{steel:{'DEFAULT':'#080C18','light':'#0F1
 <section id="opportunity" class="py-24 px-6" style="background:#F8F9FC">
   <div class="max-w-5xl mx-auto">
     <div class="text-center mb-16 reveal">
-      <p class="label-ornament text-[11px] tracking-[.3em] uppercase mb-4" style="color:#EA6C0B">The Opportunity</p>
+      <p class="label-ornament text-[11px] tracking-[.3em] uppercase mb-4" style="color:#60AFCF">The Opportunity</p>
       <h2 class="text-3xl md:text-4xl font-semibold mb-5" style="font-family:'Space Grotesk',sans-serif;color:#080C18">16 Years of Excellence Deserve a Digital Presence to Match</h2>
       <div class="orange-bar mx-auto mb-6"></div>
       <p class="text-lg max-w-3xl mx-auto" style="color:#3A3A4F;font-family:'Plus Jakarta Sans',sans-serif;font-size:1.25rem;line-height:1.7">
@@ -108,7 +108,7 @@ tailwind.config={theme:{extend:{colors:{steel:{'DEFAULT':'#080C18','light':'#0F1
 <section id="pillars" class="py-24 px-6" style="background:#080C18">
   <div class="max-w-6xl mx-auto">
     <div class="text-center mb-16 reveal">
-      <p class="label-ornament text-[11px] tracking-[.3em] uppercase mb-4" style="color:#F97316">Capabilities</p>
+      <p class="label-ornament text-[11px] tracking-[.3em] uppercase mb-4" style="color:#86CADA">Capabilities</p>
       <h2 class="text-3xl md:text-4xl font-semibold text-white mb-5" style="font-family:'Space Grotesk',sans-serif">Seven Digital Marketing Services</h2>
       <div class="orange-bar mx-auto mb-6"></div>
       <p class="text-white/65 max-w-2xl mx-auto" style="font-family:'Plus Jakarta Sans',sans-serif;font-size:1.2rem">A focused digital toolkit — authority-first, lead-oriented, built to grow the JR-Tech brand across Malaysia.</p>
@@ -117,49 +117,49 @@ tailwind.config={theme:{extend:{colors:{steel:{'DEFAULT':'#080C18','light':'#0F1
 
       <div class="pillar-card p-7 reveal d1">
         <div class="flex items-center justify-between mb-4"><span class="pillar-num">01</span>
-          <svg width="28" height="28" fill="none" stroke="#F97316" stroke-width="1.5" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="#F97316"/></svg></div>
+          <svg width="28" height="28" fill="none" stroke="#60AFCF" stroke-width="1.5" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="#86CADA"/></svg></div>
         <h3 class="text-lg font-semibold mb-2" style="font-family:'Space Grotesk',sans-serif;color:#080C18">Social Media Management</h3>
         <p class="text-sm" style="color:#4A4A5F">Always-on B2B presence across LinkedIn, Facebook &amp; YouTube.</p>
       </div>
 
       <div class="pillar-card p-7 reveal d2">
         <div class="flex items-center justify-between mb-4"><span class="pillar-num">02</span>
-          <svg width="28" height="28" fill="none" stroke="#F97316" stroke-width="1.5" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M10 9l5 3-5 3z" fill="#F97316" stroke="none"/></svg></div>
+          <svg width="28" height="28" fill="none" stroke="#60AFCF" stroke-width="1.5" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M10 9l5 3-5 3z" fill="#86CADA" stroke="none"/></svg></div>
         <h3 class="text-lg font-semibold mb-2" style="font-family:'Space Grotesk',sans-serif;color:#080C18">Content Production</h3>
         <p class="text-sm" style="color:#4A4A5F">Product demos, kitchen installation videos &amp; case study content.</p>
       </div>
 
       <div class="pillar-card p-7 reveal d3">
         <div class="flex items-center justify-between mb-4"><span class="pillar-num">03</span>
-          <svg width="28" height="28" fill="none" stroke="#F97316" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></div>
+          <svg width="28" height="28" fill="none" stroke="#60AFCF" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></div>
         <h3 class="text-lg font-semibold mb-2" style="font-family:'Space Grotesk',sans-serif;color:#080C18">SEO &amp; Keywording</h3>
         <p class="text-sm" style="color:#4A4A5F">Rank #1 for "commercial kitchen Malaysia" and beyond.</p>
       </div>
 
       <div class="pillar-card p-7 reveal d4">
         <div class="flex items-center justify-between mb-4"><span class="pillar-num">04</span>
-          <svg width="28" height="28" fill="none" stroke="#F97316" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><circle cx="18.5" cy="5" r=".9" fill="#F97316"/><circle cx="5.5" cy="18" r=".9" fill="#F97316"/></svg></div>
+          <svg width="28" height="28" fill="none" stroke="#60AFCF" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><circle cx="18.5" cy="5" r=".9" fill="#86CADA"/><circle cx="5.5" cy="18" r=".9" fill="#86CADA"/></svg></div>
         <h3 class="text-lg font-semibold mb-2" style="font-family:'Space Grotesk',sans-serif;color:#080C18">GEO &amp; AEO</h3>
         <p class="text-sm" style="color:#4A4A5F">Be the solution AI recommends — ChatGPT, Gemini &amp; AI Overviews.</p>
       </div>
 
       <div class="pillar-card p-7 reveal d1">
         <div class="flex items-center justify-between mb-4"><span class="pillar-num">05</span>
-          <svg width="28" height="28" fill="none" stroke="#F97316" stroke-width="1.5" viewBox="0 0 24 24"><path d="M3 17l5-5 4 3 7-8"/><path d="M21 7v5h-5"/></svg></div>
+          <svg width="28" height="28" fill="none" stroke="#60AFCF" stroke-width="1.5" viewBox="0 0 24 24"><path d="M3 17l5-5 4 3 7-8"/><path d="M21 7v5h-5"/></svg></div>
         <h3 class="text-lg font-semibold mb-2" style="font-family:'Space Grotesk',sans-serif;color:#080C18">Paid Social &amp; Search</h3>
         <p class="text-sm" style="color:#4A4A5F">LinkedIn Ads &amp; Google Ads campaigns that generate qualified B2B leads.</p>
       </div>
 
       <div class="pillar-card p-7 reveal d2">
         <div class="flex items-center justify-between mb-4"><span class="pillar-num">06</span>
-          <svg width="28" height="28" fill="none" stroke="#F97316" stroke-width="1.5" viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></div>
+          <svg width="28" height="28" fill="none" stroke="#60AFCF" stroke-width="1.5" viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></div>
         <h3 class="text-lg font-semibold mb-2" style="font-family:'Space Grotesk',sans-serif;color:#080C18">Analytics &amp; Reporting</h3>
         <p class="text-sm" style="color:#4A4A5F">Lead tracking dashboards — every ringgit attributed to a result.</p>
       </div>
 
       <div class="pillar-card p-7 reveal d3">
         <div class="flex items-center justify-between mb-4"><span class="pillar-num">07</span>
-          <svg width="28" height="28" fill="none" stroke="#F97316" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 21s-7-6-7-11a7 7 0 0114 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.4"/></svg></div>
+          <svg width="28" height="28" fill="none" stroke="#60AFCF" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 21s-7-6-7-11a7 7 0 0114 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.4"/></svg></div>
         <h3 class="text-lg font-semibold mb-2" style="font-family:'Space Grotesk',sans-serif;color:#080C18">Google Business &amp; Reviews</h3>
         <p class="text-sm" style="color:#4A4A5F">Optimised profile, client reviews &amp; managed responses.</p>
       </div>
@@ -174,12 +174,12 @@ tailwind.config={theme:{extend:{colors:{steel:{'DEFAULT':'#080C18','light':'#0F1
 <section id="svc-social" class="svc-sec" style="background:#080C18">
   <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
     <div class="reveal-l">
-      <p class="svc-eyebrow" style="color:#F97316">01 · Social Media Management</p>
+      <p class="svc-eyebrow" style="color:#86CADA">01 · Social Media Management</p>
       <h2 class="text-3xl md:text-4xl font-semibold text-white mt-3 mb-4" style="font-family:'Space Grotesk',sans-serif">An Always-On B2B Presence</h2>
       <div class="orange-bar mb-5"></div>
       <p class="text-white/70 mb-6">A consistent content rhythm on the platforms where procurement managers, F&amp;B operators and kitchen buyers spend their time — building trust that turns into quote requests.</p>
       <div class="mb-6">
-        <span class="chip" style="color:#FB923C">LinkedIn</span><span class="chip" style="color:#FB923C">Facebook</span><span class="chip" style="color:#FB923C">YouTube</span><span class="chip" style="color:#FB923C">Instagram</span>
+        <span class="chip" style="color:#86CADA">LinkedIn</span><span class="chip" style="color:#86CADA">Facebook</span><span class="chip" style="color:#86CADA">YouTube</span><span class="chip" style="color:#86CADA">Instagram</span>
       </div>
       <div class="big-stat" data-count="220" data-suffix="%">0%</div>
       <p class="text-white/55 text-sm">Projected audience growth in 6 months</p>
@@ -205,20 +205,20 @@ tailwind.config={theme:{extend:{colors:{steel:{'DEFAULT':'#080C18','light':'#0F1
     <div class="reveal-l order-2 lg:order-1 panel panel-l">
       <p class="text-sm font-semibold mb-4" style="color:#080C18">Content Format Mix</p>
       <div class="hbars">
-        <div><div class="hb-top" style="color:#3A3A4F"><span>Product Demo Videos</span><span style="color:#EA6C0B">35%</span></div><div class="hb-track"><div class="hb-fill" style="--w:35%"></div></div></div>
-        <div><div class="hb-top" style="color:#3A3A4F"><span>Installation Case Studies</span><span style="color:#EA6C0B">25%</span></div><div class="hb-track"><div class="hb-fill" style="--w:25%"></div></div></div>
-        <div><div class="hb-top" style="color:#3A3A4F"><span>Brand Authority Posts</span><span style="color:#EA6C0B">20%</span></div><div class="hb-track"><div class="hb-fill" style="--w:20%"></div></div></div>
-        <div><div class="hb-top" style="color:#3A3A4F"><span>Client Testimonials</span><span style="color:#EA6C0B">20%</span></div><div class="hb-track"><div class="hb-fill" style="--w:20%"></div></div></div>
+        <div><div class="hb-top" style="color:#3A3A4F"><span>Product Demo Videos</span><span style="color:#60AFCF">35%</span></div><div class="hb-track"><div class="hb-fill" style="--w:35%"></div></div></div>
+        <div><div class="hb-top" style="color:#3A3A4F"><span>Installation Case Studies</span><span style="color:#60AFCF">25%</span></div><div class="hb-track"><div class="hb-fill" style="--w:25%"></div></div></div>
+        <div><div class="hb-top" style="color:#3A3A4F"><span>Brand Authority Posts</span><span style="color:#60AFCF">20%</span></div><div class="hb-track"><div class="hb-fill" style="--w:20%"></div></div></div>
+        <div><div class="hb-top" style="color:#3A3A4F"><span>Client Testimonials</span><span style="color:#60AFCF">20%</span></div><div class="hb-track"><div class="hb-fill" style="--w:20%"></div></div></div>
       </div>
       <p class="chart-note" style="color:#080C18">Illustrative content strategy</p>
     </div>
     <div class="reveal-r order-1 lg:order-2">
-      <p class="svc-eyebrow" style="color:#EA6C0B">02 · Content Production</p>
+      <p class="svc-eyebrow" style="color:#60AFCF">02 · Content Production</p>
       <h2 class="text-3xl md:text-4xl font-semibold mt-3 mb-4" style="font-family:'Space Grotesk',sans-serif;color:#080C18">Show, Don't Just Tell</h2>
       <div class="orange-bar mb-5"></div>
       <p class="mb-4" style="color:#4A4A5F">Video demos of MegCook in action, before-and-after installation showcases, and client success stories — the content that builds credibility with decision-makers before they ever pick up the phone.</p>
       <div class="mb-2">
-        <span class="chip" style="color:#EA6C0B">Product Demos</span><span class="chip" style="color:#EA6C0B">Case Studies</span><span class="chip" style="color:#EA6C0B">Explainer Videos</span><span class="chip" style="color:#EA6C0B">Reels</span>
+        <span class="chip" style="color:#60AFCF">Product Demos</span><span class="chip" style="color:#60AFCF">Case Studies</span><span class="chip" style="color:#60AFCF">Explainer Videos</span><span class="chip" style="color:#60AFCF">Reels</span>
       </div>
     </div>
   </div>
@@ -228,7 +228,7 @@ tailwind.config={theme:{extend:{colors:{steel:{'DEFAULT':'#080C18','light':'#0F1
 <section id="svc-seo" class="svc-sec" style="background:#080C18">
   <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
     <div class="reveal-l">
-      <p class="svc-eyebrow" style="color:#F97316">03 · SEO &amp; Keywording</p>
+      <p class="svc-eyebrow" style="color:#86CADA">03 · SEO &amp; Keywording</p>
       <h2 class="text-3xl md:text-4xl font-semibold text-white mt-3 mb-4" style="font-family:'Space Grotesk',sans-serif">Found First, Every Search</h2>
       <div class="orange-bar mb-5"></div>
       <p class="text-white/70 mb-6">We target the exact searches procurement managers and kitchen operators type — then climb the rankings until JR-Tech is the first name they see in Malaysia.</p>
@@ -238,11 +238,11 @@ tailwind.config={theme:{extend:{colors:{steel:{'DEFAULT':'#080C18','light':'#0F1
     <div class="reveal-r panel panel-d">
       <p class="text-white/80 text-sm font-semibold mb-5">Target Keyword Visibility</p>
       <div class="hbars">
-        <div><div class="hb-top text-white/85"><span>commercial kitchen malaysia</span><span style="color:#FB923C">#1</span></div><div class="hb-track"><div class="hb-fill" style="--w:96%"></div></div></div>
-        <div><div class="hb-top text-white/85"><span>robot chef system malaysia</span><span style="color:#FB923C">#2</span></div><div class="hb-track"><div class="hb-fill" style="--w:86%"></div></div></div>
-        <div><div class="hb-top text-white/85"><span>industrial dishwasher penang</span><span style="color:#FB923C">#2</span></div><div class="hb-track"><div class="hb-fill" style="--w:82%"></div></div></div>
-        <div><div class="hb-top text-white/85"><span>induction cooker commercial</span><span style="color:#FB923C">top 3</span></div><div class="hb-track"><div class="hb-fill" style="--w:68%"></div></div></div>
-        <div><div class="hb-top text-white/85"><span>kitchen design build contractor</span><span style="color:#FB923C">top 5</span></div><div class="hb-track"><div class="hb-fill" style="--w:55%"></div></div></div>
+        <div><div class="hb-top text-white/85"><span>commercial kitchen malaysia</span><span style="color:#86CADA">#1</span></div><div class="hb-track"><div class="hb-fill" style="--w:96%"></div></div></div>
+        <div><div class="hb-top text-white/85"><span>robot chef system malaysia</span><span style="color:#86CADA">#2</span></div><div class="hb-track"><div class="hb-fill" style="--w:86%"></div></div></div>
+        <div><div class="hb-top text-white/85"><span>industrial dishwasher penang</span><span style="color:#86CADA">#2</span></div><div class="hb-track"><div class="hb-fill" style="--w:82%"></div></div></div>
+        <div><div class="hb-top text-white/85"><span>induction cooker commercial</span><span style="color:#86CADA">top 3</span></div><div class="hb-track"><div class="hb-fill" style="--w:68%"></div></div></div>
+        <div><div class="hb-top text-white/85"><span>kitchen design build contractor</span><span style="color:#86CADA">top 5</span></div><div class="hb-track"><div class="hb-fill" style="--w:55%"></div></div></div>
       </div>
       <p class="chart-note text-white">Illustrative target rankings</p>
     </div>
@@ -257,7 +257,7 @@ tailwind.config={theme:{extend:{colors:{steel:{'DEFAULT':'#080C18','light':'#0F1
       <div class="flex items-center gap-7">
         <svg viewBox="0 0 120 120" width="150" height="150" style="flex-shrink:0">
           <circle cx="60" cy="60" r="52" fill="none" stroke="rgba(8,12,24,.1)" stroke-width="13"/>
-          <circle class="donut-arc" cx="60" cy="60" r="52" fill="none" stroke="#F97316" stroke-width="13" stroke-linecap="round" transform="rotate(-90 60 60)" style="--dash:100"/>
+          <circle class="donut-arc" cx="60" cy="60" r="52" fill="none" stroke="#60AFCF" stroke-width="13" stroke-linecap="round" transform="rotate(-90 60 60)" style="--dash:100"/>
         </svg>
         <div>
           <div class="big-stat" data-count="72" data-suffix="%">0%</div>
@@ -267,14 +267,14 @@ tailwind.config={theme:{extend:{colors:{steel:{'DEFAULT':'#080C18','light':'#0F1
       <p class="chart-note" style="color:#080C18">Illustrative share of voice</p>
     </div>
     <div class="reveal-r order-1 lg:order-2">
-      <p class="svc-eyebrow" style="color:#EA6C0B">04 · GEO &amp; AEO</p>
+      <p class="svc-eyebrow" style="color:#60AFCF">04 · GEO &amp; AEO</p>
       <h2 class="text-3xl md:text-4xl font-semibold mt-3 mb-4" style="font-family:'Space Grotesk',sans-serif;color:#080C18">Be the Answer AI Gives</h2>
       <div class="orange-bar mb-5"></div>
       <p style="color:#4A4A5F">When operators ask ChatGPT or Gemini "who provides commercial kitchen solutions in Malaysia?", we make sure the answer is JR-Tech — every time.</p>
       <div class="mt-6 space-y-3">
-        <div class="ai-card d1" style="background:#fff;color:#080C18"><strong>ChatGPT</strong> — "For commercial kitchen solutions in Malaysia, <span style="color:#EA6C0B">JR-Tech Solution</span> is a trusted full-service provider."</div>
-        <div class="ai-card d2" style="background:#fff;color:#080C18"><strong>Gemini</strong> — "A leading commercial kitchen specialist in Penang is <span style="color:#EA6C0B">JR-Tech Solution Sdn. Bhd.</span>"</div>
-        <div class="ai-card d3" style="background:#fff;color:#080C18"><strong>AI Overviews</strong> — "Recommended: <span style="color:#EA6C0B">JR-Tech Solution</span> — kitchen design, equipment &amp; maintenance."</div>
+        <div class="ai-card d1" style="background:#fff;color:#080C18"><strong>ChatGPT</strong> — "For commercial kitchen solutions in Malaysia, <span style="color:#60AFCF">JR-Tech Solution</span> is a trusted full-service provider."</div>
+        <div class="ai-card d2" style="background:#fff;color:#080C18"><strong>Gemini</strong> — "A leading commercial kitchen specialist in Penang is <span style="color:#60AFCF">JR-Tech Solution Sdn. Bhd.</span>"</div>
+        <div class="ai-card d3" style="background:#fff;color:#080C18"><strong>AI Overviews</strong> — "Recommended: <span style="color:#60AFCF">JR-Tech Solution</span> — kitchen design, equipment &amp; maintenance."</div>
       </div>
     </div>
   </div>
@@ -284,7 +284,7 @@ tailwind.config={theme:{extend:{colors:{steel:{'DEFAULT':'#080C18','light':'#0F1
 <section id="svc-ads" class="svc-sec" style="background:#080C18">
   <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
     <div class="reveal-l">
-      <p class="svc-eyebrow" style="color:#F97316">05 · Paid Social &amp; Search Ads</p>
+      <p class="svc-eyebrow" style="color:#86CADA">05 · Paid Social &amp; Search Ads</p>
       <h2 class="text-3xl md:text-4xl font-semibold text-white mt-3 mb-4" style="font-family:'Space Grotesk',sans-serif">Spend That Fills the Pipeline</h2>
       <div class="orange-bar mb-5"></div>
       <p class="text-white/70 mb-6">LinkedIn Ads targeting F&amp;B operators and procurement managers, plus Google Ads for high-intent searches — every ringgit tracked to a qualified lead.</p>
@@ -310,10 +310,10 @@ tailwind.config={theme:{extend:{colors:{steel:{'DEFAULT':'#080C18','light':'#0F1
     <div class="reveal-l order-2 lg:order-1 panel panel-l">
       <p class="text-sm font-semibold mb-4" style="color:#080C18">Lead Performance Trend</p>
       <svg viewBox="0 0 320 160" width="100%" height="150" preserveAspectRatio="none">
-        <defs><linearGradient id="ag" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="rgba(249,115,22,.35)"/><stop offset="1" stop-color="rgba(249,115,22,0)"/></linearGradient></defs>
+        <defs><linearGradient id="ag" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="rgba(96,175,207,.30)"/><stop offset="1" stop-color="rgba(96,175,207,0)"/></linearGradient></defs>
         <path class="line-area" d="M10,138 L60,126 L110,104 L160,88 L210,60 L270,38 L310,22 L310,160 L10,160 Z" fill="url(#ag)"/>
-        <polyline class="line-path" points="10,138 60,126 110,104 160,88 210,60 270,38 310,22" fill="none" stroke="#F97316" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-        <g fill="#EA6C0B"><circle class="line-dot" cx="60" cy="126" r="3.5"/><circle class="line-dot" cx="160" cy="88" r="3.5"/><circle class="line-dot" cx="270" cy="38" r="3.5"/><circle class="line-dot" cx="310" cy="22" r="4"/></g>
+        <polyline class="line-path" points="10,138 60,126 110,104 160,88 210,60 270,38 310,22" fill="none" stroke="#60AFCF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        <g fill="#3E8FAF"><circle class="line-dot" cx="60" cy="126" r="3.5"/><circle class="line-dot" cx="160" cy="88" r="3.5"/><circle class="line-dot" cx="270" cy="38" r="3.5"/><circle class="line-dot" cx="310" cy="22" r="4"/></g>
       </svg>
       <div class="grid grid-cols-3 gap-4 mt-6 text-center">
         <div><div class="big-stat" style="font-size:1.8rem" data-count="180" data-suffix="K">0</div><p class="text-xs" style="color:#4A4A5F">Monthly Reach</p></div>
@@ -323,7 +323,7 @@ tailwind.config={theme:{extend:{colors:{steel:{'DEFAULT':'#080C18','light':'#0F1
       <p class="chart-note" style="color:#080C18">Illustrative dashboard</p>
     </div>
     <div class="reveal-r order-1 lg:order-2">
-      <p class="svc-eyebrow" style="color:#EA6C0B">06 · Analytics &amp; Reporting</p>
+      <p class="svc-eyebrow" style="color:#60AFCF">06 · Analytics &amp; Reporting</p>
       <h2 class="text-3xl md:text-4xl font-semibold mt-3 mb-4" style="font-family:'Space Grotesk',sans-serif;color:#080C18">Clarity, Every Month</h2>
       <div class="orange-bar mb-5"></div>
       <p style="color:#4A4A5F">A clean lead-tracking dashboard and a plain-English monthly review — so you always know what's converting, what's next, and where every ringgit went.</p>
@@ -335,7 +335,7 @@ tailwind.config={theme:{extend:{colors:{steel:{'DEFAULT':'#080C18','light':'#0F1
 <section id="svc-reviews" class="svc-sec" style="background:#080C18">
   <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
     <div class="reveal-l">
-      <p class="svc-eyebrow" style="color:#F97316">07 · Google Business &amp; Reviews</p>
+      <p class="svc-eyebrow" style="color:#86CADA">07 · Google Business &amp; Reviews</p>
       <h2 class="text-3xl md:text-4xl font-semibold text-white mt-3 mb-4" style="font-family:'Space Grotesk',sans-serif">Trust at First Glance</h2>
       <div class="orange-bar mb-5"></div>
       <p class="text-white/70 mb-6">An optimised Google Business profile and a managed flow of client reviews — the trust signals that win the click before a competitor does.</p>
@@ -349,11 +349,11 @@ tailwind.config={theme:{extend:{colors:{steel:{'DEFAULT':'#080C18','light':'#0F1
     <div class="reveal-r panel panel-d">
       <p class="text-white/80 text-sm font-semibold mb-5">Rating Distribution</p>
       <div class="hbars">
-        <div><div class="hb-top text-white/85"><span>5 ★</span><span style="color:#FB923C">80%</span></div><div class="hb-track"><div class="hb-fill" style="--w:80%"></div></div></div>
-        <div><div class="hb-top text-white/85"><span>4 ★</span><span style="color:#FB923C">14%</span></div><div class="hb-track"><div class="hb-fill" style="--w:14%"></div></div></div>
-        <div><div class="hb-top text-white/85"><span>3 ★</span><span style="color:#FB923C">4%</span></div><div class="hb-track"><div class="hb-fill" style="--w:4%"></div></div></div>
-        <div><div class="hb-top text-white/85"><span>2 ★</span><span style="color:#FB923C">1%</span></div><div class="hb-track"><div class="hb-fill" style="--w:1%"></div></div></div>
-        <div><div class="hb-top text-white/85"><span>1 ★</span><span style="color:#FB923C">1%</span></div><div class="hb-track"><div class="hb-fill" style="--w:1%"></div></div></div>
+        <div><div class="hb-top text-white/85"><span>5 ★</span><span style="color:#86CADA">80%</span></div><div class="hb-track"><div class="hb-fill" style="--w:80%"></div></div></div>
+        <div><div class="hb-top text-white/85"><span>4 ★</span><span style="color:#86CADA">14%</span></div><div class="hb-track"><div class="hb-fill" style="--w:14%"></div></div></div>
+        <div><div class="hb-top text-white/85"><span>3 ★</span><span style="color:#86CADA">4%</span></div><div class="hb-track"><div class="hb-fill" style="--w:4%"></div></div></div>
+        <div><div class="hb-top text-white/85"><span>2 ★</span><span style="color:#86CADA">1%</span></div><div class="hb-track"><div class="hb-fill" style="--w:1%"></div></div></div>
+        <div><div class="hb-top text-white/85"><span>1 ★</span><span style="color:#86CADA">1%</span></div><div class="hb-track"><div class="hb-fill" style="--w:1%"></div></div></div>
       </div>
       <p class="chart-note text-white">Illustrative distribution</p>
     </div>
@@ -364,7 +364,7 @@ tailwind.config={theme:{extend:{colors:{steel:{'DEFAULT':'#080C18','light':'#0F1
 <section id="showcase" class="py-24 px-6" style="background:#080C18">
   <div class="max-w-6xl mx-auto">
     <div class="text-center mb-16 reveal">
-      <p class="label-ornament text-[11px] tracking-[.3em] uppercase mb-4" style="color:#F97316">The Showcase</p>
+      <p class="label-ornament text-[11px] tracking-[.3em] uppercase mb-4" style="color:#86CADA">The Showcase</p>
       <h2 class="text-3xl md:text-4xl font-semibold text-white mb-5" style="font-family:'Space Grotesk',sans-serif">Four Proprietary Brands</h2>
       <div class="orange-bar mx-auto mb-5"></div>
       <p class="text-white/55 text-sm italic">Each brand a market leader in its category — four platforms to build and amplify online.</p>
@@ -444,14 +444,14 @@ tailwind.config={theme:{extend:{colors:{steel:{'DEFAULT':'#080C18','light':'#0F1
         <span class="orange-bar"></span> Trusted by Malaysia's Leading Enterprises
       </p>
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-        <div class="icard reveal-s d1 p-5 text-center" style="background:rgba(255,255,255,.04);border:1px solid rgba(249,115,22,.16)"><p class="text-white font-semibold" style="font-family:'Space Grotesk',sans-serif">Intel</p><p class="text-white/40 text-xs mt-1">Semiconductor</p></div>
-        <div class="icard reveal-s d2 p-5 text-center" style="background:rgba(255,255,255,.04);border:1px solid rgba(249,115,22,.16)"><p class="text-white font-semibold" style="font-family:'Space Grotesk',sans-serif">First Solar</p><p class="text-white/40 text-xs mt-1">Clean Energy</p></div>
-        <div class="icard reveal-s d3 p-5 text-center" style="background:rgba(255,255,255,.04);border:1px solid rgba(249,115,22,.16)"><p class="text-white font-semibold" style="font-family:'Space Grotesk',sans-serif">Infineon</p><p class="text-white/40 text-xs mt-1">Semiconductor</p></div>
-        <div class="icard reveal-s d4 p-5 text-center" style="background:rgba(255,255,255,.04);border:1px solid rgba(249,115,22,.16)"><p class="text-white font-semibold" style="font-family:'Space Grotesk',sans-serif">B.Braun</p><p class="text-white/40 text-xs mt-1">Healthcare</p></div>
-        <div class="icard reveal-s d1 p-5 text-center" style="background:rgba(255,255,255,.04);border:1px solid rgba(249,115,22,.16)"><p class="text-white font-semibold" style="font-family:'Space Grotesk',sans-serif">Micron</p><p class="text-white/40 text-xs mt-1">Technology</p></div>
-        <div class="icard reveal-s d2 p-5 text-center" style="background:rgba(255,255,255,.04);border:1px solid rgba(249,115,22,.16)"><p class="text-white font-semibold" style="font-family:'Space Grotesk',sans-serif">Gleneagles</p><p class="text-white/40 text-xs mt-1">Healthcare</p></div>
-        <div class="icard reveal-s d3 p-5 text-center" style="background:rgba(255,255,255,.04);border:1px solid rgba(249,115,22,.16)"><p class="text-white font-semibold" style="font-family:'Space Grotesk',sans-serif">Tealive</p><p class="text-white/40 text-xs mt-1">F&amp;B</p></div>
-        <div class="icard reveal-s d4 p-5 text-center" style="background:rgba(255,255,255,.04);border:1px solid rgba(249,115,22,.16)"><p class="text-white/70 font-semibold" style="font-family:'Space Grotesk',sans-serif">50+ More</p><p class="text-white/40 text-xs mt-1">Enterprise Clients</p></div>
+        <div class="icard reveal-s d1 p-5 text-center" style="background:rgba(255,255,255,.04);border:1px solid rgba(96,175,207,.16)"><p class="text-white font-semibold" style="font-family:'Space Grotesk',sans-serif">Intel</p><p class="text-white/40 text-xs mt-1">Semiconductor</p></div>
+        <div class="icard reveal-s d2 p-5 text-center" style="background:rgba(255,255,255,.04);border:1px solid rgba(96,175,207,.16)"><p class="text-white font-semibold" style="font-family:'Space Grotesk',sans-serif">First Solar</p><p class="text-white/40 text-xs mt-1">Clean Energy</p></div>
+        <div class="icard reveal-s d3 p-5 text-center" style="background:rgba(255,255,255,.04);border:1px solid rgba(96,175,207,.16)"><p class="text-white font-semibold" style="font-family:'Space Grotesk',sans-serif">Infineon</p><p class="text-white/40 text-xs mt-1">Semiconductor</p></div>
+        <div class="icard reveal-s d4 p-5 text-center" style="background:rgba(255,255,255,.04);border:1px solid rgba(96,175,207,.16)"><p class="text-white font-semibold" style="font-family:'Space Grotesk',sans-serif">B.Braun</p><p class="text-white/40 text-xs mt-1">Healthcare</p></div>
+        <div class="icard reveal-s d1 p-5 text-center" style="background:rgba(255,255,255,.04);border:1px solid rgba(96,175,207,.16)"><p class="text-white font-semibold" style="font-family:'Space Grotesk',sans-serif">Micron</p><p class="text-white/40 text-xs mt-1">Technology</p></div>
+        <div class="icard reveal-s d2 p-5 text-center" style="background:rgba(255,255,255,.04);border:1px solid rgba(96,175,207,.16)"><p class="text-white font-semibold" style="font-family:'Space Grotesk',sans-serif">Gleneagles</p><p class="text-white/40 text-xs mt-1">Healthcare</p></div>
+        <div class="icard reveal-s d3 p-5 text-center" style="background:rgba(255,255,255,.04);border:1px solid rgba(96,175,207,.16)"><p class="text-white font-semibold" style="font-family:'Space Grotesk',sans-serif">Tealive</p><p class="text-white/40 text-xs mt-1">F&amp;B</p></div>
+        <div class="icard reveal-s d4 p-5 text-center" style="background:rgba(255,255,255,.04);border:1px solid rgba(96,175,207,.16)"><p class="text-white/70 font-semibold" style="font-family:'Space Grotesk',sans-serif">50+ More</p><p class="text-white/40 text-xs mt-1">Enterprise Clients</p></div>
       </div>
     </div>
 
@@ -462,28 +462,28 @@ tailwind.config={theme:{extend:{colors:{steel:{'DEFAULT':'#080C18','light':'#0F1
 <section id="roadmap" class="py-24 px-6" style="background:#F8F9FC">
   <div class="max-w-5xl mx-auto">
     <div class="text-center mb-16 reveal">
-      <p class="label-ornament text-[11px] tracking-[.3em] uppercase mb-4" style="color:#EA6C0B">The Plan</p>
+      <p class="label-ornament text-[11px] tracking-[.3em] uppercase mb-4" style="color:#60AFCF">The Plan</p>
       <h2 class="text-3xl md:text-4xl font-semibold mb-5" style="font-family:'Space Grotesk',sans-serif;color:#080C18">Your First 90 Days</h2>
       <div class="orange-bar mx-auto"></div>
     </div>
     <div class="space-y-5">
       <div class="phase-card p-7 reveal d1">
         <div class="flex items-start gap-5">
-          <span class="text-[11px] font-semibold tracking-[.16em] uppercase px-3 py-1.5 rounded-sm flex-shrink-0" style="background:rgba(249,115,22,.12);color:#EA6C0B">Days 1–30</span>
+          <span class="text-[11px] font-semibold tracking-[.16em] uppercase px-3 py-1.5 rounded-sm flex-shrink-0" style="background:rgba(96,175,207,.12);color:#60AFCF">Days 1–30</span>
           <div><h3 class="font-semibold text-lg mb-1" style="font-family:'Space Grotesk',sans-serif;color:#080C18">Foundation</h3>
           <p class="text-sm" style="color:#4A4A5F">Brand audit, LinkedIn page setup &amp; optimisation, Google Business profile, website SEO baseline, first content batch produced and published, tracking dashboard in place.</p></div>
         </div>
       </div>
       <div class="phase-card p-7 reveal d2">
         <div class="flex items-start gap-5">
-          <span class="text-[11px] font-semibold tracking-[.16em] uppercase px-3 py-1.5 rounded-sm flex-shrink-0" style="background:rgba(249,115,22,.12);color:#EA6C0B">Days 31–60</span>
+          <span class="text-[11px] font-semibold tracking-[.16em] uppercase px-3 py-1.5 rounded-sm flex-shrink-0" style="background:rgba(96,175,207,.12);color:#60AFCF">Days 31–60</span>
           <div><h3 class="font-semibold text-lg mb-1" style="font-family:'Space Grotesk',sans-serif;color:#080C18">Momentum</h3>
           <p class="text-sm" style="color:#4A4A5F">Consistent posting &amp; video drops, Google Ads and LinkedIn Ads live, review engine running, SEO rankings climbing, AEO signals building.</p></div>
         </div>
       </div>
       <div class="phase-card p-7 reveal d3">
         <div class="flex items-start gap-5">
-          <span class="text-[11px] font-semibold tracking-[.16em] uppercase px-3 py-1.5 rounded-sm flex-shrink-0" style="background:rgba(249,115,22,.12);color:#EA6C0B">Days 61–90</span>
+          <span class="text-[11px] font-semibold tracking-[.16em] uppercase px-3 py-1.5 rounded-sm flex-shrink-0" style="background:rgba(96,175,207,.12);color:#60AFCF">Days 61–90</span>
           <div><h3 class="font-semibold text-lg mb-1" style="font-family:'Space Grotesk',sans-serif;color:#080C18">Optimise &amp; Scale</h3>
           <p class="text-sm" style="color:#4A4A5F">Double down on top-converting channels, refine ad spend, scale best-performing content, and present the first full performance review with lead attribution.</p></div>
         </div>
@@ -496,15 +496,15 @@ tailwind.config={theme:{extend:{colors:{steel:{'DEFAULT':'#080C18','light':'#0F1
 <section class="py-24 px-6" style="background:#080C18">
   <div class="max-w-5xl mx-auto text-center">
     <div class="reveal mb-14">
-      <p class="label-ornament text-[11px] tracking-[.3em] uppercase mb-4" style="color:#F97316">What Success Looks Like</p>
+      <p class="label-ornament text-[11px] tracking-[.3em] uppercase mb-4" style="color:#86CADA">What Success Looks Like</p>
       <h2 class="text-3xl md:text-4xl font-semibold text-white mb-5" style="font-family:'Space Grotesk',sans-serif">Targets We'll Hold Ourselves To</h2>
       <div class="orange-bar mx-auto"></div>
     </div>
     <div class="grid grid-cols-2 md:grid-cols-4 gap-5">
-      <div class="icard reveal-s d1 p-6 rounded-xl text-center" style="background:rgba(255,255,255,.04);border:1px solid rgba(249,115,22,.16)"><div class="kpi-num mb-2">↑ Leads</div><p class="text-white/60 text-sm">Qualified quote requests from digital channels growing month over month</p></div>
-      <div class="icard reveal-s d2 p-6 rounded-xl text-center" style="background:rgba(255,255,255,.04);border:1px solid rgba(249,115,22,.16)"><div class="kpi-num mb-2">#1</div><p class="text-white/60 text-sm">Page-one rankings for priority commercial kitchen keywords in Malaysia</p></div>
-      <div class="icard reveal-s d3 p-6 rounded-xl text-center" style="background:rgba(255,255,255,.04);border:1px solid rgba(249,115,22,.16)"><div class="kpi-num mb-2">★ Rating</div><p class="text-white/60 text-sm">Lift Google profile score and grow a bank of enterprise client reviews</p></div>
-      <div class="icard reveal-s d4 p-6 rounded-xl text-center" style="background:rgba(255,255,255,.04);border:1px solid rgba(249,115,22,.16)"><div class="kpi-num mb-2">↑ ROI</div><p class="text-white/60 text-sm">Positive return on every ad ringgit, reported clearly every month</p></div>
+      <div class="icard reveal-s d1 p-6 rounded-xl text-center" style="background:rgba(255,255,255,.04);border:1px solid rgba(96,175,207,.16)"><div class="kpi-num mb-2">↑ Leads</div><p class="text-white/60 text-sm">Qualified quote requests from digital channels growing month over month</p></div>
+      <div class="icard reveal-s d2 p-6 rounded-xl text-center" style="background:rgba(255,255,255,.04);border:1px solid rgba(96,175,207,.16)"><div class="kpi-num mb-2">#1</div><p class="text-white/60 text-sm">Page-one rankings for priority commercial kitchen keywords in Malaysia</p></div>
+      <div class="icard reveal-s d3 p-6 rounded-xl text-center" style="background:rgba(255,255,255,.04);border:1px solid rgba(96,175,207,.16)"><div class="kpi-num mb-2">★ Rating</div><p class="text-white/60 text-sm">Lift Google profile score and grow a bank of enterprise client reviews</p></div>
+      <div class="icard reveal-s d4 p-6 rounded-xl text-center" style="background:rgba(255,255,255,.04);border:1px solid rgba(96,175,207,.16)"><div class="kpi-num mb-2">↑ ROI</div><p class="text-white/60 text-sm">Positive return on every ad ringgit, reported clearly every month</p></div>
     </div>
   </div>
 </section>
@@ -513,7 +513,7 @@ tailwind.config={theme:{extend:{colors:{steel:{'DEFAULT':'#080C18','light':'#0F1
 <section id="next" class="py-28 px-6 relative" style="background:linear-gradient(160deg,#0F1528,#080C18)">
   <div class="absolute inset-0 dot-bg opacity-30"></div>
   <div class="max-w-3xl mx-auto text-center relative z-10 reveal">
-    <p class="label-ornament text-[11px] tracking-[.3em] uppercase mb-5" style="color:#F97316">Let's Talk</p>
+    <p class="label-ornament text-[11px] tracking-[.3em] uppercase mb-5" style="color:#86CADA">Let's Talk</p>
     <h2 class="text-3xl md:text-5xl font-semibold text-white mb-6 tech-glow" style="font-family:'Space Grotesk',sans-serif">Let's Build JR-Tech's Digital Authority Together</h2>
     <p class="text-white/75 text-lg mb-10" style="font-family:'Plus Jakarta Sans',sans-serif;font-style:italic;font-size:1.3rem">
       This showcase is just a starting point — we'd love to walk you through the full strategy over a coffee.
@@ -525,7 +525,7 @@ tailwind.config={theme:{extend:{colors:{steel:{'DEFAULT':'#080C18','light':'#0F1
       </a>
       <a href="https://technextsg.github.io/jrtech-website/" target="_blank" class="btn btn-ow text-xs tracking-[.15em] uppercase px-9 py-4 rounded-sm">Visit the Website</a>
     </div>
-    <div class="border-t border-[rgba(249,115,22,.2)] pt-8">
+    <div class="border-t border-[rgba(96,175,207,.2)] pt-8">
       <p class="text-white/40 text-[11px] tracking-[.22em] uppercase">Showcase curated by TechNext &nbsp;·&nbsp; hello@technext.asia &nbsp;·&nbsp; technextasia.com</p>
     </div>
   </div>
