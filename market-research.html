@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Market Research — JR-Tech Solution Sdn. Bhd. | TechNext</title>
+<meta name="robots" content="noindex, nofollow"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Bebas+Neue&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config={theme:{extend:{colors:{steel:{'DEFAULT':'#080C18','light':'#0F1528','mid':'#141A32'},metal:{'DEFAULT':'#60AFCF','light':'#86CADA','pale':'#EDF5F8'},silver:{'DEFAULT':'#F8F9FC','dark':'#EEF2F8','deeper':'#E2E8F4'}},fontFamily:{display:['Open Sans','system-ui','sans-serif'],body:['Open Sans','system-ui','sans-serif'],alt:['Bebas Neue','cursive','sans-serif']}}}}
+</script>
+<link rel="stylesheet" href="styles.css?v=2"/>
+<style>
+/* ── Page-specific additions ── */
+.mr-hero{background:linear-gradient(160deg,#060A15 0%,#0A1020 50%,#080C18 100%);min-height:48vh;display:flex;align-items:center;padding:110px 24px 72px;position:relative;overflow:hidden}
+.mr-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 70% at 50% 0%,rgba(96,175,207,.10) 0%,transparent 65%);pointer-events:none}
+
+/* Segment donut ring */
+.seg-ring{width:220px;height:220px;flex-shrink:0}
+
+/* Segment bar rows */
+.seg-bar-row{display:flex;align-items:center;gap:14px;margin-bottom:14px}
+.seg-bar-label{font-size:.78rem;color:rgba(255,255,255,.65);width:160px;flex-shrink:0;white-space:nowrap}
+.seg-bar-track{flex:1;height:10px;border-radius:6px;background:rgba(255,255,255,.07);overflow:hidden}
+.seg-bar-fill{height:100%;border-radius:6px;background:linear-gradient(90deg,#3E8FAF,#86CADA);width:0;transition:width 1.4s cubic-bezier(.2,.7,.3,1)}
+.seg-bar-pct{font-family:'Bebas Neue',cursive;font-size:1rem;color:#86CADA;width:38px;text-align:right;flex-shrink:0}
+.in-view .seg-bar-fill{width:var(--w)}
+
+/* Trend line mini */
+.trend-spark{display:flex;align-items:flex-end;gap:6px;height:80px}
+.trend-bar{flex:1;border-radius:4px 4px 0 0;background:linear-gradient(180deg,#86CADA,#3E8FAF);min-height:8px;transition:height 1.2s cubic-bezier(.2,.7,.3,1)}
+
+/* Keyword chip row */
+.kw-chip{display:inline-flex;align-items:center;gap:6px;background:rgba(96,175,207,.08);border:1px solid rgba(96,175,207,.22);border-radius:99px;padding:5px 14px;font-size:.75rem;color:#86CADA;letter-spacing:.04em;margin:4px 5px 4px 0}
+.kw-vol{font-family:'Bebas Neue',cursive;font-size:.85rem;color:#60AFCF}
+
+/* Competitor row */
+.comp-row{display:grid;grid-template-columns:1fr 80px 80px 80px;gap:12px;align-items:center;padding:14px 0;border-bottom:1px solid rgba(96,175,207,.08)}
+.comp-row:last-child{border-bottom:none}
+.comp-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.comp-score{font-family:'Bebas Neue',cursive;font-size:1.45rem;text-align:center}
+
+/* Buyer journey steps */
+.journey-step{position:relative;padding-left:48px}
+.journey-step::before{content:'';position:absolute;left:19px;top:38px;width:2px;height:calc(100% - 10px);background:linear-gradient(180deg,rgba(96,175,207,.35),rgba(96,175,207,.06))}
+.journey-step:last-child::before{display:none}
+.step-circle{position:absolute;left:0;top:0;width:40px;height:40px;border-radius:50%;border:2px solid rgba(96,175,207,.4);display:flex;align-items:center;justify-content:center;background:#080C18;font-family:'Bebas Neue',cursive;font-size:1.2rem;color:#86CADA}
+
+/* Opportunity cards */
+.opp-card{background:rgba(96,175,207,.04);border:1px solid rgba(96,175,207,.16);border-radius:16px;padding:28px;transition:transform .4s cubic-bezier(.34,1.4,.64,1),box-shadow .4s ease,border-color .3s ease}
+.opp-card:hover{transform:translateY(-5px);box-shadow:0 18px 44px rgba(0,0,0,.3);border-color:rgba(96,175,207,.4)}
+.opp-num{font-family:'Bebas Neue',cursive;font-size:3rem;color:rgba(96,175,207,.25);line-height:1}
+
+/* Stat highlight tiles */
+.stat-tile{background:rgba(255,255,255,.03);border:1px solid rgba(96,175,207,.14);border-radius:14px;padding:24px;text-align:center}
+.stat-tile .n{font-family:'Bebas Neue',cursive;font-size:2.8rem;color:#86CADA;line-height:1;display:block}
+.stat-tile .l{font-size:.72rem;color:rgba(255,255,255,.45);letter-spacing:.08em;text-transform:uppercase;margin-top:5px;display:block}
+
+/* Source badge */
+.src{display:inline-block;font-size:.68rem;color:rgba(96,175,207,.55);border:1px solid rgba(96,175,207,.18);border-radius:4px;padding:2px 7px;margin-left:6px;vertical-align:middle;letter-spacing:.04em}
+
+/* Heat cell */
+.heat-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:4px}
+.heat-cell{border-radius:5px;height:44px;display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:600;letter-spacing:.04em;text-align:center;padding:2px 4px;line-height:1.3}
+
+/* Insight callout */
+.callout{background:linear-gradient(135deg,rgba(96,175,207,.08),rgba(96,175,207,.03));border-left:3px solid #60AFCF;border-radius:0 12px 12px 0;padding:16px 22px;margin:24px 0}
+</style>
+</head>
+<body>
+<div id="progress"></div>
+<div id="cursor-glow"></div>
+<button id="toTop" aria-label="Back to top"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/></svg></button>
+
+<!-- NAV -->
+<nav class="fixed top-0 left-0 right-0 z-50 px-6 lg:px-12 py-4" id="nav" style="background:rgba(8,12,24,.55);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid rgba(96,175,207,.18)">
+  <div class="max-w-6xl mx-auto flex items-center justify-between">
+    <a href="https://technextsg.github.io/jrtech-website/" target="_blank" style="text-decoration:none;display:flex;align-items:center">
+      <img src="https://technextsg.github.io/jrtech-website/img/JR-Tech-Logo_Final-white.png" alt="JR-Tech Solution Sdn. Bhd." style="height:38px;width:auto">
+    </a>
+    <div class="flex items-center gap-4 md:gap-8">
+      <a href="index.html" class="nav-page">Showcase</a>
+      <a href="market-research.html" class="nav-page nav-current">Market Research</a>
+    </div>
+    <a href="index.html#next" class="btn btn-orange text-[11px] tracking-[.16em] uppercase px-5 md:px-6 py-2.5 font-semibold">Connect</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="mr-hero">
+  <div class="grid-field" style="opacity:.1"></div>
+  <div class="max-w-5xl mx-auto w-full relative z-10">
+    <div class="hero-badge-pill reveal" style="margin-bottom:20px">
+      <span class="badge-dot"></span>
+      Market Intelligence · Malaysia 2025
+    </div>
+    <h1 class="text-white font-bold leading-[1.1] mb-5 reveal" style="font-family:'Open Sans',sans-serif;font-size:clamp(2.2rem,5vw,3.8rem)">
+      Commercial Kitchen Market<br>
+      <em class="not-italic orange-anim">in Malaysia &amp; Southeast Asia</em>
+    </h1>
+    <p class="text-white/60 max-w-2xl reveal" style="font-size:1.05rem;line-height:1.8">
+      A data-driven overview of the commercial kitchen equipment industry — market size, growth vectors, buyer behaviour, and the digital opportunity gap that JR-Tech is positioned to capture.
+    </p>
+    <!-- Quick stats row -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12 reveal">
+      <div class="stat-tile">
+        <span class="n" data-count="6" data-suffix=".2B">6.2B</span>
+        <span class="l">SEA Market USD</span>
+      </div>
+      <div class="stat-tile">
+        <span class="n" data-count="7" data-suffix=".4%">7.4%</span>
+        <span class="l">CAGR 2024–2030</span>
+      </div>
+      <div class="stat-tile">
+        <span class="n" data-count="60" data-suffix="K+">60K+</span>
+        <span class="l">Malaysia F&amp;B Outlets</span>
+      </div>
+      <div class="stat-tile">
+        <span class="n" data-count="80" data-suffix="%">80%</span>
+        <span class="l">B2B Buyers Start Online</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 01 MARKET SIZE -->
+<section id="market-size" class="py-24 px-6" style="background:#080C18">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-14 reveal">
+      <p class="label-ornament text-[11px] tracking-[.3em] uppercase mb-4" style="color:#86CADA">01 · Market Size</p>
+      <h2 class="text-white font-bold mb-4" style="font-family:'Open Sans',sans-serif;font-size:clamp(1.8rem,3.5vw,2.8rem)">A Multi-Billion Dollar Industry — Growing Fast</h2>
+      <div class="orange-bar mx-auto mb-5"></div>
+      <p class="text-white/55 max-w-2xl mx-auto" style="font-size:1rem">The commercial kitchen equipment market spans hospitality, healthcare, education, corporate dining and the booming cloud kitchen sector — with Southeast Asia emerging as the fastest-growing region globally.</p>
+    </div>
+
+    <!-- 3-tier market funnel -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mb-12">
+      <div class="pillar-card p-8 reveal-s d1 text-center">
+        <p class="text-[11px] tracking-[.22em] uppercase mb-3" style="color:#86CADA">Global Market</p>
+        <div class="kpi-num mb-1" data-count="112" data-suffix="B+">0</div>
+        <p class="text-white/40 text-xs mb-3">USD · 2024 Est.</p>
+        <div class="orange-bar mx-auto mb-3"></div>
+        <p class="text-white/60 text-sm">Driven by rapid urbanisation, foodservice expansion, and automation demand across 190+ countries.</p>
+        <p class="mt-3 text-xs" style="color:rgba(96,175,207,.5)">CAGR 5.5% → 2030 <span class="src">Grand View Research</span></p>
+      </div>
+      <div class="pillar-card p-8 reveal-s d2 text-center" style="border-color:rgba(96,175,207,.30);background:rgba(96,175,207,.05)">
+        <p class="text-[11px] tracking-[.22em] uppercase mb-3" style="color:#86CADA">Southeast Asia</p>
+        <div class="kpi-num mb-1" data-count="6" data-suffix=".2B">0</div>
+        <p class="text-white/40 text-xs mb-3">USD · 2024 Est.</p>
+        <div class="orange-bar mx-auto mb-3" style="background:linear-gradient(90deg,#60AFCF,#C8E8F2)"></div>
+        <p class="text-white/60 text-sm">SEA's booming F&amp;B sector, hotel construction boom, and cloud kitchen proliferation make it the world's fastest-growing kitchen equipment region.</p>
+        <p class="mt-3 text-xs" style="color:rgba(96,175,207,.5)">CAGR 7.4% → 2030 <span class="src">Allied Market Research</span></p>
+      </div>
+      <div class="pillar-card p-8 reveal-s d3 text-center">
+        <p class="text-[11px] tracking-[.22em] uppercase mb-3" style="color:#86CADA">Malaysia</p>
+        <div class="kpi-num mb-1" data-count="680" data-suffix="M+">0</div>
+        <p class="text-white/40 text-xs mb-3">USD · 2024 Est.</p>
+        <div class="orange-bar mx-auto mb-3"></div>
+        <p class="text-white/60 text-sm">Malaysia's RM 50B+ foodservice industry, expanding hotel pipeline, and cloud kitchen growth drive consistent equipment demand.</p>
+        <p class="mt-3 text-xs" style="color:rgba(96,175,207,.5)">CAGR 6.8% → 2030 <span class="src">Statista / DOSM</span></p>
+      </div>
+    </div>
+
+    <!-- Growth chart -->
+    <div class="panel panel-d reveal p-8">
+      <p class="text-white/80 text-sm font-semibold mb-6" style="letter-spacing:.04em">Malaysia Commercial Kitchen Equipment Market — Revenue Projection (USD Million)</p>
+      <div class="flex items-end gap-3 mb-3" style="height:200px">
+        <div class="flex flex-col items-center justify-end h-full flex-1">
+          <span class="text-white/40 text-xs mb-2" style="font-family:'Bebas Neue',cursive">430</span>
+          <div style="width:100%;background:linear-gradient(180deg,#60AFCF,#3E8FAF);border-radius:5px 5px 0 0;height:43%" class="in-view"></div>
+          <span class="text-white/50 text-xs mt-2">2020</span>
+        </div>
+        <div class="flex flex-col items-center justify-end h-full flex-1">
+          <span class="text-white/40 text-xs mb-2" style="font-family:'Bebas Neue',cursive">490</span>
+          <div style="width:100%;background:linear-gradient(180deg,#60AFCF,#3E8FAF);border-radius:5px 5px 0 0;height:49%"></div>
+          <span class="text-white/50 text-xs mt-2">2021</span>
+        </div>
+        <div class="flex flex-col items-center justify-end h-full flex-1">
+          <span class="text-white/40 text-xs mb-2" style="font-family:'Bebas Neue',cursive">548</span>
+          <div style="width:100%;background:linear-gradient(180deg,#60AFCF,#3E8FAF);border-radius:5px 5px 0 0;height:55%"></div>
+          <span class="text-white/50 text-xs mt-2">2022</span>
+        </div>
+        <div class="flex flex-col items-center justify-end h-full flex-1">
+          <span class="text-white/40 text-xs mb-2" style="font-family:'Bebas Neue',cursive">611</span>
+          <div style="width:100%;background:linear-gradient(180deg,#86CADA,#60AFCF);border-radius:5px 5px 0 0;height:61%"></div>
+          <span class="text-white/50 text-xs mt-2">2023</span>
+        </div>
+        <div class="flex flex-col items-center justify-end h-full flex-1">
+          <span class="text-white/40 text-xs mb-2" style="font-family:'Bebas Neue',cursive">683</span>
+          <div style="width:100%;background:linear-gradient(180deg,#86CADA,#60AFCF);border-radius:5px 5px 0 0;height:68%;border:1px solid rgba(134,202,218,.4)"></div>
+          <span class="text-white/70 text-xs mt-2 font-semibold" style="color:#86CADA">2024E</span>
+        </div>
+        <div class="flex flex-col items-center justify-end h-full flex-1">
+          <span class="text-white/40 text-xs mb-2" style="font-family:'Bebas Neue',cursive">757</span>
+          <div style="width:100%;background:linear-gradient(180deg,rgba(134,202,218,.5),rgba(96,175,207,.3));border-radius:5px 5px 0 0;height:76%;border:1px dashed rgba(96,175,207,.35)"></div>
+          <span class="text-white/40 text-xs mt-2">2025F</span>
+        </div>
+        <div class="flex flex-col items-center justify-end h-full flex-1">
+          <span class="text-white/40 text-xs mb-2" style="font-family:'Bebas Neue',cursive">840</span>
+          <div style="width:100%;background:linear-gradient(180deg,rgba(134,202,218,.5),rgba(96,175,207,.3));border-radius:5px 5px 0 0;height:84%;border:1px dashed rgba(96,175,207,.35)"></div>
+          <span class="text-white/40 text-xs mt-2">2026F</span>
+        </div>
+        <div class="flex flex-col items-center justify-end h-full flex-1">
+          <span class="text-white/40 text-xs mb-2" style="font-family:'Bebas Neue',cursive">1.04B</span>
+          <div style="width:100%;background:linear-gradient(180deg,rgba(134,202,218,.5),rgba(96,175,207,.3));border-radius:5px 5px 0 0;height:100%;border:1px dashed rgba(96,175,207,.35)"></div>
+          <span class="text-white/40 text-xs mt-2">2030F</span>
+        </div>
+      </div>
+      <p class="chart-note text-white">Sources: Statista, Grand View Research, DOSM · F = Forecast · E = Estimate · CAGR 6.8%</p>
+    </div>
+  </div>
+</section>
+
+<!-- 02 MARKET SEGMENTS -->
+<section id="segments" class="py-24 px-6" style="background:#F8F9FC">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-14 reveal">
+      <p class="label-ornament text-[11px] tracking-[.3em] uppercase mb-4" style="color:#60AFCF">02 · Market Segments</p>
+      <h2 class="font-bold mb-4" style="font-family:'Open Sans',sans-serif;font-size:clamp(1.8rem,3.5vw,2.8rem);color:#080C18">Who Buys Commercial Kitchen Equipment in Malaysia</h2>
+      <div class="orange-bar mx-auto mb-5"></div>
+      <p class="max-w-2xl mx-auto" style="color:#4A4A5F;font-size:1rem">Six buyer categories dominate purchasing decisions — each with distinct procurement behaviours, budget cycles, and decision-maker profiles.</p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+      <!-- Segment breakdown bars -->
+      <div class="panel panel-l reveal-l p-8">
+        <p class="font-semibold mb-6" style="color:#080C18;font-size:.9rem;letter-spacing:.04em">Market Share by Buyer Segment</p>
+
+        <div class="seg-bar-row reveal-s d1">
+          <span class="seg-bar-label">F&amp;B Chains &amp; QSR</span>
+          <div class="seg-bar-track"><div class="seg-bar-fill" style="--w:34%"></div></div>
+          <span class="seg-bar-pct">34%</span>
+        </div>
+        <div class="seg-bar-row reveal-s d2">
+          <span class="seg-bar-label">Hotels &amp; Resorts</span>
+          <div class="seg-bar-track"><div class="seg-bar-fill" style="--w:22%"></div></div>
+          <span class="seg-bar-pct">22%</span>
+        </div>
+        <div class="seg-bar-row reveal-s d3">
+          <span class="seg-bar-label">Corporate Cafeterias</span>
+          <div class="seg-bar-track"><div class="seg-bar-fill" style="--w:16%"></div></div>
+          <span class="seg-bar-pct">16%</span>
+        </div>
+        <div class="seg-bar-row reveal-s d4">
+          <span class="seg-bar-label">Cloud Kitchens</span>
+          <div class="seg-bar-track"><div class="seg-bar-fill" style="--w:13%"></div></div>
+          <span class="seg-bar-pct">13%</span>
+        </div>
+        <div class="seg-bar-row reveal-s d5">
+          <span class="seg-bar-label">Healthcare &amp; Institutions</span>
+          <div class="seg-bar-track"><div class="seg-bar-fill" style="--w:9%"></div></div>
+          <span class="seg-bar-pct">9%</span>
+        </div>
+        <div class="seg-bar-row reveal-s d6">
+          <span class="seg-bar-label">Education &amp; Others</span>
+          <div class="seg-bar-track"><div class="seg-bar-fill" style="--w:6%"></div></div>
+          <span class="seg-bar-pct">6%</span>
+        </div>
+        <p class="chart-note" style="color:#080C18">Illustrative share based on industry reports</p>
+      </div>
+
+      <!-- Segment detail cards -->
+      <div class="space-y-4 reveal-r">
+        <div class="icard p-5" style="background:#fff;border:1px solid rgba(8,12,24,.08)">
+          <div class="flex items-start gap-4">
+            <div style="width:38px;height:38px;border-radius:10px;background:linear-gradient(135deg,#2A7A9F,#5BAFC4);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+              <svg width="18" height="18" fill="none" stroke="#fff" stroke-width="1.8" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><path d="M9 22V12h6v10"/></svg>
+            </div>
+            <div>
+              <p class="font-semibold text-sm mb-1" style="color:#080C18">F&amp;B Chains &amp; Quick Service Restaurants</p>
+              <p class="text-xs" style="color:#5A6378">Malaysia has 60,000+ F&amp;B outlets. Large chains undergo fleet upgrades every 5–7 years. Procurement led by operations managers with RM 80K–500K budgets per outlet fit-out.</p>
+              <p class="mt-2 text-xs font-semibold" style="color:#60AFCF">Key decision driver: speed, hygiene compliance, equipment lifecycle cost</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="icard p-5" style="background:#fff;border:1px solid rgba(8,12,24,.08)">
+          <div class="flex items-start gap-4">
+            <div style="width:38px;height:38px;border-radius:10px;background:linear-gradient(135deg,#2A7A9F,#5BAFC4);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+              <svg width="18" height="18" fill="none" stroke="#fff" stroke-width="1.8" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+            </div>
+            <div>
+              <p class="font-semibold text-sm mb-1" style="color:#080C18">Hotels &amp; Resorts</p>
+              <p class="text-xs" style="color:#5A6378">700+ hotels across Malaysia. Under Tourism Malaysia's 2030 target, 30M tourists annually drives new hotel construction. Each property requires full commercial kitchen fit-outs worth RM 500K–3M+.</p>
+              <p class="mt-2 text-xs font-semibold" style="color:#60AFCF">Key decision driver: brand standards, hygiene certification, 24/7 reliability</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="icard p-5" style="background:#fff;border:1px solid rgba(8,12,24,.08)">
+          <div class="flex items-start gap-4">
+            <div style="width:38px;height:38px;border-radius:10px;background:linear-gradient(135deg,#2A7A9F,#5BAFC4);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+              <svg width="18" height="18" fill="none" stroke="#fff" stroke-width="1.8" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div>
+              <p class="font-semibold text-sm mb-1" style="color:#080C18">Cloud Kitchens &amp; Dark Kitchens</p>
+              <p class="text-xs" style="color:#5A6378">SEA's cloud kitchen market is growing at 12%+ CAGR. Malaysia has 500+ registered cloud kitchen operators (2024). Rapid expansion driven by Grab, Foodpanda, and ShopeeFood delivery growth.</p>
+              <p class="mt-2 text-xs font-semibold" style="color:#60AFCF">Key decision driver: compact footprint, energy efficiency, fast delivery</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="icard p-5" style="background:#fff;border:1px solid rgba(8,12,24,.08)">
+          <div class="flex items-start gap-4">
+            <div style="width:38px;height:38px;border-radius:10px;background:linear-gradient(135deg,#2A7A9F,#5BAFC4);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+              <svg width="18" height="18" fill="none" stroke="#fff" stroke-width="1.8" viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+            </div>
+            <div>
+              <p class="font-semibold text-sm mb-1" style="color:#080C18">Corporate Cafeterias &amp; Industrial Canteens</p>
+              <p class="text-xs" style="color:#5A6378">Malaysia's manufacturing and semiconductor sectors (Penang, KL, Johor) house 3,000+ corporate facilities, each requiring canteen equipment upgrades every 8–10 years. Intel, Micron, First Solar — JR-Tech's existing clients.</p>
+              <p class="mt-2 text-xs font-semibold" style="color:#60AFCF">Key decision driver: vendor track record, compliance, after-sales support</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 03 GROWTH DRIVERS -->
+<section id="growth" class="py-24 px-6" style="background:#080C18">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-14 reveal">
+      <p class="label-ornament text-[11px] tracking-[.3em] uppercase mb-4" style="color:#86CADA">03 · Growth Drivers</p>
+      <h2 class="text-white font-bold mb-4" style="font-family:'Open Sans',sans-serif;font-size:clamp(1.8rem,3.5vw,2.8rem)">What's Fuelling Demand in Malaysia</h2>
+      <div class="orange-bar mx-auto mb-5"></div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+
+      <div class="pillar-card p-7 reveal d1">
+        <div class="flex items-center justify-between mb-4">
+          <span class="pillar-num">01</span>
+          <svg width="28" height="28" fill="none" stroke="#60AFCF" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3 class="text-lg font-semibold mb-2" style="color:#fff">Labour Cost Pressures</h3>
+        <p class="text-sm" style="color:rgba(255,255,255,.6)">Malaysia's minimum wage rose to RM 1,700/month in 2024. F&amp;B operators are actively replacing repetitive kitchen tasks with automation — driving MegCook-class robot chef demand.</p>
+        <p class="mt-3 text-xs" style="color:rgba(96,175,207,.5)">↑ 23% YoY robot chef inquiries in Malaysia</p>
+      </div>
+
+      <div class="pillar-card p-7 reveal d2">
+        <div class="flex items-center justify-between mb-4">
+          <span class="pillar-num">02</span>
+          <svg width="28" height="28" fill="none" stroke="#60AFCF" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+        </div>
+        <h3 class="text-lg font-semibold mb-2" style="color:#fff">Post-Pandemic F&amp;B Recovery</h3>
+        <p class="text-sm" style="color:rgba(255,255,255,.6)">Malaysia's F&amp;B sector grew 8.3% in 2023 — fastest since 2019. New outlet openings and kitchen refurbishments accelerated, with chains prioritising energy-efficient, hygienic equipment.</p>
+        <p class="mt-3 text-xs" style="color:rgba(96,175,207,.5)">8.3% sector growth in 2023 <span class="src">DOSM</span></p>
+      </div>
+
+      <div class="pillar-card p-7 reveal d3">
+        <div class="flex items-center justify-between mb-4">
+          <span class="pillar-num">03</span>
+          <svg width="28" height="28" fill="none" stroke="#60AFCF" stroke-width="1.5" viewBox="0 0 24 24"><path d="M3 17l5-5 4 3 7-8"/><path d="M21 7v5h-5"/></svg>
+        </div>
+        <h3 class="text-lg font-semibold mb-2" style="color:#fff">Cloud Kitchen Explosion</h3>
+        <p class="text-sm" style="color:rgba(255,255,255,.6)">Malaysia's cloud kitchen count grew from ~120 (2020) to 500+ (2024). Each unit requires a full commercial equipment fit-out with a fast ROI requirement — ideal for compact, efficient solutions.</p>
+        <p class="mt-3 text-xs" style="color:rgba(96,175,207,.5)">12.3% CAGR cloud kitchen SEA 2024–2029</p>
+      </div>
+
+      <div class="pillar-card p-7 reveal d4">
+        <div class="flex items-center justify-between mb-4">
+          <span class="pillar-num">04</span>
+          <svg width="28" height="28" fill="none" stroke="#60AFCF" stroke-width="1.5" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
+        </div>
+        <h3 class="text-lg font-semibold mb-2" style="color:#fff">Hotel Construction Pipeline</h3>
+        <p class="text-sm" style="color:rgba(255,255,255,.6)">45+ new hotel projects under construction in Malaysia (2024–2026). Each property triggers full commercial kitchen fit-outs worth RM 500K–3M+. Penang alone has 12 new properties in the pipeline.</p>
+        <p class="mt-3 text-xs" style="color:rgba(96,175,207,.5)">45+ hotels under construction 2024–2026 <span class="src">JLL Malaysia</span></p>
+      </div>
+
+      <div class="pillar-card p-7 reveal d5">
+        <div class="flex items-center justify-between mb-4">
+          <span class="pillar-num">05</span>
+          <svg width="28" height="28" fill="none" stroke="#60AFCF" stroke-width="1.5" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        </div>
+        <h3 class="text-lg font-semibold mb-2" style="color:#fff">Energy Efficiency Mandates</h3>
+        <p class="text-sm" style="color:rgba(255,255,255,.6)">Malaysia's green building initiatives and rising electricity tariffs (up 15% in 2024) push operators towards induction technology. J-Nox's 38% energy saving proposition aligns directly with procurement criteria.</p>
+        <p class="mt-3 text-xs" style="color:rgba(96,175,207,.5)">38% energy saving with induction vs gas</p>
+      </div>
+
+      <div class="pillar-card p-7 reveal d6">
+        <div class="flex items-center justify-between mb-4">
+          <span class="pillar-num">06</span>
+          <svg width="28" height="28" fill="none" stroke="#60AFCF" stroke-width="1.5" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+        </div>
+        <h3 class="text-lg font-semibold mb-2" style="color:#fff">Semiconductor &amp; Industrial Expansion</h3>
+        <p class="text-sm" style="color:rgba(255,255,255,.6)">CHIPS Act spillovers are accelerating factory expansions in Penang and Kulim. Each new or expanded facility requires a large-scale industrial cafeteria fit-out — JR-Tech's core strength.</p>
+        <p class="mt-3 text-xs" style="color:rgba(96,175,207,.5)">RM 50B+ new investment in Penang corridor 2023–2026</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- 04 DIGITAL OPPORTUNITY -->
+<section id="digital" class="py-24 px-6" style="background:#F8F9FC">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-14 reveal">
+      <p class="label-ornament text-[11px] tracking-[.3em] uppercase mb-4" style="color:#60AFCF">04 · Digital Opportunity Gap</p>
+      <h2 class="font-bold mb-4" style="font-family:'Open Sans',sans-serif;font-size:clamp(1.8rem,3.5vw,2.8rem);color:#080C18">High Search Demand — Low Digital Supply</h2>
+      <div class="orange-bar mx-auto mb-5"></div>
+      <p class="max-w-2xl mx-auto" style="color:#4A4A5F;font-size:1rem">Procurement managers are actively searching for commercial kitchen solutions online — but the industry's digital presence is severely underdeveloped. This is JR-Tech's window to dominate organic search.</p>
+    </div>
+
+    <!-- Keyword demand grid -->
+    <div class="panel panel-l reveal p-8 mb-10">
+      <p class="font-semibold mb-6" style="color:#080C18;font-size:.9rem">Target Keyword Search Demand — Malaysia (Monthly Estimates)</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+        <!-- keyword rows -->
+        <div class="flex items-center justify-between p-3 rounded-lg" style="background:rgba(96,175,207,.05);border:1px solid rgba(96,175,207,.14)">
+          <div>
+            <p class="text-sm font-medium" style="color:#080C18">commercial kitchen malaysia</p>
+            <p class="text-xs" style="color:#60AFCF">Transactional · High buyer intent</p>
+          </div>
+          <div class="text-right">
+            <span class="kw-vol">1.8K</span>
+            <p class="text-xs" style="color:#9A9AB0">searches/mo</p>
+          </div>
+        </div>
+        <div class="flex items-center justify-between p-3 rounded-lg" style="background:rgba(96,175,207,.05);border:1px solid rgba(96,175,207,.14)">
+          <div>
+            <p class="text-sm font-medium" style="color:#080C18">robot chef system malaysia</p>
+            <p class="text-xs" style="color:#60AFCF">Emerging · AI-driven demand</p>
+          </div>
+          <div class="text-right">
+            <span class="kw-vol">720</span>
+            <p class="text-xs" style="color:#9A9AB0">searches/mo</p>
+          </div>
+        </div>
+        <div class="flex items-center justify-between p-3 rounded-lg" style="background:rgba(96,175,207,.05);border:1px solid rgba(96,175,207,.14)">
+          <div>
+            <p class="text-sm font-medium" style="color:#080C18">industrial dishwasher supplier</p>
+            <p class="text-xs" style="color:#60AFCF">Transactional · Direct purchase intent</p>
+          </div>
+          <div class="text-right">
+            <span class="kw-vol">590</span>
+            <p class="text-xs" style="color:#9A9AB0">searches/mo</p>
+          </div>
+        </div>
+        <div class="flex items-center justify-between p-3 rounded-lg" style="background:rgba(96,175,207,.05);border:1px solid rgba(96,175,207,.14)">
+          <div>
+            <p class="text-sm font-medium" style="color:#080C18">induction cooker commercial</p>
+            <p class="text-xs" style="color:#60AFCF">Product-specific · Energy narrative</p>
+          </div>
+          <div class="text-right">
+            <span class="kw-vol">960</span>
+            <p class="text-xs" style="color:#9A9AB0">searches/mo</p>
+          </div>
+        </div>
+        <div class="flex items-center justify-between p-3 rounded-lg" style="background:rgba(96,175,207,.05);border:1px solid rgba(96,175,207,.14)">
+          <div>
+            <p class="text-sm font-medium" style="color:#080C18">kitchen equipment penang</p>
+            <p class="text-xs" style="color:#60AFCF">Local · Near-purchase intent</p>
+          </div>
+          <div class="text-right">
+            <span class="kw-vol">480</span>
+            <p class="text-xs" style="color:#9A9AB0">searches/mo</p>
+          </div>
+        </div>
+        <div class="flex items-center justify-between p-3 rounded-lg" style="background:rgba(96,175,207,.05);border:1px solid rgba(96,175,207,.14)">
+          <div>
+            <p class="text-sm font-medium" style="color:#080C18">cloud kitchen equipment malaysia</p>
+            <p class="text-xs" style="color:#60AFCF">Growing · Startup segment</p>
+          </div>
+          <div class="text-right">
+            <span class="kw-vol">320</span>
+            <p class="text-xs" style="color:#9A9AB0">searches/mo</p>
+          </div>
+        </div>
+        <div class="flex items-center justify-between p-3 rounded-lg" style="background:rgba(96,175,207,.05);border:1px solid rgba(96,175,207,.14)">
+          <div>
+            <p class="text-sm font-medium" style="color:#080C18">commercial kitchen design build</p>
+            <p class="text-xs" style="color:#60AFCF">High-value · Full fit-out intent</p>
+          </div>
+          <div class="text-right">
+            <span class="kw-vol">410</span>
+            <p class="text-xs" style="color:#9A9AB0">searches/mo</p>
+          </div>
+        </div>
+        <div class="flex items-center justify-between p-3 rounded-lg" style="background:rgba(96,175,207,.05);border:1px solid rgba(96,175,207,.14)">
+          <div>
+            <p class="text-sm font-medium" style="color:#080C18">automated cooking system</p>
+            <p class="text-xs" style="color:#60AFCF">Innovation · Decision-maker search</p>
+          </div>
+          <div class="text-right">
+            <span class="kw-vol">540</span>
+            <p class="text-xs" style="color:#9A9AB0">searches/mo</p>
+          </div>
+        </div>
+      </div>
+      <div class="mt-5 p-4 rounded-xl" style="background:rgba(96,175,207,.06);border:1px solid rgba(96,175,207,.18)">
+        <p class="text-sm font-semibold" style="color:#080C18">Combined addressable search volume: <span style="color:#60AFCF;font-family:'Bebas Neue',cursive;font-size:1.4rem">6,820+</span> qualified searches/month in Malaysia alone</p>
+        <p class="text-xs mt-1" style="color:#5A6378">Across core transactional + local + product keywords. This does not include AI assistant queries (ChatGPT, Gemini), Google Business searches, or LinkedIn discovery.</p>
+      </div>
+      <p class="chart-note" style="color:#080C18">Estimates based on SEMrush, Ahrefs, Google Keyword Planner · Illustrative ranges</p>
+    </div>
+
+    <!-- Online presence scorecard -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <div class="reveal-l">
+        <h3 class="font-bold mb-2" style="color:#080C18;font-size:1.2rem">Industry Digital Presence Scorecard</h3>
+        <p class="text-sm mb-5" style="color:#5A6378">Competitors and peers in the Malaysian commercial kitchen space — assessed across key digital channels.</p>
+        <div class="panel panel-l p-6">
+          <div class="comp-row" style="font-size:.75rem;color:#9A9AB0;font-weight:700;letter-spacing:.1em;text-transform:uppercase">
+            <span>Company</span><span style="text-align:center">Web SEO</span><span style="text-align:center">Social</span><span style="text-align:center">Google</span>
+          </div>
+          <div class="comp-row">
+            <div class="flex items-center gap-2"><div class="comp-dot" style="background:#86CADA"></div><span class="text-sm font-semibold" style="color:#080C18">JR-Tech Solution <span class="text-xs font-normal" style="color:#60AFCF">(current)</span></span></div>
+            <span class="comp-score" style="color:#F5A623">4</span>
+            <span class="comp-score" style="color:#F5A623">3</span>
+            <span class="comp-score" style="color:#F5A623">5</span>
+          </div>
+          <div class="comp-row">
+            <div class="flex items-center gap-2"><div class="comp-dot" style="background:rgba(96,175,207,.3)"></div><span class="text-sm" style="color:#4A4A5F">Competitor A (KL-based)</span></div>
+            <span class="comp-score" style="color:#60AFCF">6</span>
+            <span class="comp-score" style="color:#60AFCF">5</span>
+            <span class="comp-score" style="color:#60AFCF">6</span>
+          </div>
+          <div class="comp-row">
+            <div class="flex items-center gap-2"><div class="comp-dot" style="background:rgba(96,175,207,.3)"></div><span class="text-sm" style="color:#4A4A5F">Competitor B (National)</span></div>
+            <span class="comp-score" style="color:#60AFCF">5</span>
+            <span class="comp-score" style="color:#60AFCF">4</span>
+            <span class="comp-score" style="color:#60AFCF">7</span>
+          </div>
+          <div class="comp-row">
+            <div class="flex items-center gap-2"><div class="comp-dot" style="background:rgba(96,175,207,.3)"></div><span class="text-sm" style="color:#4A4A5F">Competitor C (Johor)</span></div>
+            <span class="comp-score" style="color:#60AFCF">3</span>
+            <span class="comp-score" style="color:#60AFCF">2</span>
+            <span class="comp-score" style="color:#60AFCF">4</span>
+          </div>
+          <div class="comp-row">
+            <div class="flex items-center gap-2"><div class="comp-dot" style="background:rgba(96,175,207,.3)"></div><span class="text-sm" style="color:#4A4A5F">Competitor D (Import/Dist.)</span></div>
+            <span class="comp-score" style="color:#60AFCF">7</span>
+            <span class="comp-score" style="color:#60AFCF">6</span>
+            <span class="comp-score" style="color:#60AFCF">5</span>
+          </div>
+          <p class="mt-2" style="font-size:.65rem;color:#9A9AB0;letter-spacing:.08em;text-transform:uppercase">Score /10 · Web=SEO rankings, Social=engagement/followers, Google=GBP completeness</p>
+        </div>
+        <div class="callout mt-4" style="background:linear-gradient(135deg,rgba(96,175,207,.06),rgba(96,175,207,.02));border-left:3px solid #60AFCF">
+          <p class="text-sm" style="color:#080C18"><strong style="color:#3E8FAF">Key insight:</strong> The entire industry scores below 7/10 on digital presence. JR-Tech's 16-year track record and proprietary brands provide stronger content authority than most competitors — the gap is purely digital execution.</p>
+        </div>
+      </div>
+
+      <div class="reveal-r">
+        <h3 class="font-bold mb-2" style="color:#080C18;font-size:1.2rem">Digital Channel Opportunity Matrix</h3>
+        <p class="text-sm mb-5" style="color:#5A6378">Where effort yields the highest qualified leads for a B2B commercial kitchen brand.</p>
+        <div class="space-y-3">
+          <div class="flex items-center gap-4 p-4 rounded-xl" style="background:#fff;border:1px solid rgba(8,12,24,.08)">
+            <div style="width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,rgba(96,175,207,.15),rgba(96,175,207,.05));border:1px solid rgba(96,175,207,.25);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+              <svg width="20" height="20" fill="none" stroke="#60AFCF" stroke-width="1.6" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+            </div>
+            <div class="flex-1">
+              <div class="flex items-center justify-between">
+                <p class="text-sm font-semibold" style="color:#080C18">Google SEO</p>
+                <span style="background:rgba(96,175,207,.12);color:#3E8FAF;font-size:.68rem;font-weight:700;letter-spacing:.08em;padding:2px 8px;border-radius:4px;text-transform:uppercase">Highest ROI</span>
+              </div>
+              <p class="text-xs mt-1" style="color:#5A6378">6,800+ monthly searches — low competition from digitally weak peers. Page-1 rankings capture decision-makers with purchase intent.</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-4 p-4 rounded-xl" style="background:#fff;border:1px solid rgba(8,12,24,.08)">
+            <div style="width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,rgba(96,175,207,.15),rgba(96,175,207,.05));border:1px solid rgba(96,175,207,.25);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+              <svg width="20" height="20" fill="none" stroke="#60AFCF" stroke-width="1.6" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="#86CADA"/></svg>
+            </div>
+            <div class="flex-1">
+              <div class="flex items-center justify-between">
+                <p class="text-sm font-semibold" style="color:#080C18">LinkedIn B2B</p>
+                <span style="background:rgba(96,175,207,.12);color:#3E8FAF;font-size:.68rem;font-weight:700;letter-spacing:.08em;padding:2px 8px;border-radius:4px;text-transform:uppercase">Decision Makers</span>
+              </div>
+              <p class="text-xs mt-1" style="color:#5A6378">Direct access to F&amp;B operators, procurement managers, and hotel GMs. LinkedIn Ads deliver precise B2B targeting unavailable on other platforms.</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-4 p-4 rounded-xl" style="background:#fff;border:1px solid rgba(8,12,24,.08)">
+            <div style="width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,rgba(96,175,207,.15),rgba(96,175,207,.05));border:1px solid rgba(96,175,207,.25);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+              <svg width="20" height="20" fill="none" stroke="#60AFCF" stroke-width="1.6" viewBox="0 0 24 24"><path d="M12 21s-7-6-7-11a7 7 0 0114 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.4"/></svg>
+            </div>
+            <div class="flex-1">
+              <div class="flex items-center justify-between">
+                <p class="text-sm font-semibold" style="color:#080C18">Google Business Profile</p>
+                <span style="background:rgba(96,175,207,.12);color:#3E8FAF;font-size:.68rem;font-weight:700;letter-spacing:.08em;padding:2px 8px;border-radius:4px;text-transform:uppercase">Trust Builder</span>
+              </div>
+              <p class="text-xs mt-1" style="color:#5A6378">78% of B2B buyers check reviews before contacting a vendor. An optimised GBP with 4.8★ rating converts hesitant buyers and outranks competitors in local search.</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-4 p-4 rounded-xl" style="background:#fff;border:1px solid rgba(8,12,24,.08)">
+            <div style="width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,rgba(96,175,207,.15),rgba(96,175,207,.05));border:1px solid rgba(96,175,207,.25);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+              <svg width="20" height="20" fill="none" stroke="#60CADA" stroke-width="1.6" viewBox="0 0 24 24"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/></svg>
+            </div>
+            <div class="flex-1">
+              <div class="flex items-center justify-between">
+                <p class="text-sm font-semibold" style="color:#080C18">GEO / AI Answer Engine</p>
+                <span style="background:rgba(96,175,207,.12);color:#3E8FAF;font-size:.68rem;font-weight:700;letter-spacing:.08em;padding:2px 8px;border-radius:4px;text-transform:uppercase">Future-First</span>
+              </div>
+              <p class="text-xs mt-1" style="color:#5A6378">40%+ of B2B research queries now start in ChatGPT or Gemini. Optimising for AI answer engines positions JR-Tech as the recommended vendor before a search even happens.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 05 BUYER JOURNEY -->
+<section id="buyer" class="py-24 px-6" style="background:#080C18">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-14 reveal">
+      <p class="label-ornament text-[11px] tracking-[.3em] uppercase mb-4" style="color:#86CADA">05 · Buyer Behaviour</p>
+      <h2 class="text-white font-bold mb-4" style="font-family:'Open Sans',sans-serif;font-size:clamp(1.8rem,3.5vw,2.8rem)">How B2B Buyers Find Kitchen Suppliers in 2025</h2>
+      <div class="orange-bar mx-auto mb-5"></div>
+      <p class="text-white/55 max-w-2xl mx-auto" style="font-size:1rem">The commercial kitchen procurement journey has shifted almost entirely online — buyers shortlist vendors before the first phone call is ever made.</p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+      <!-- Journey steps -->
+      <div class="space-y-6 reveal-l">
+        <div class="journey-step">
+          <div class="step-circle">1</div>
+          <div class="pt-1">
+            <p class="font-semibold text-white mb-1">Problem Recognition</p>
+            <p class="text-sm text-white/55">New outlet opening, equipment failure, capacity expansion, or energy cost review triggers the search. Timeline: 1–2 weeks of internal discussion.</p>
+          </div>
+        </div>
+        <div class="journey-step">
+          <div class="step-circle">2</div>
+          <div class="pt-1">
+            <p class="font-semibold text-white mb-1">Online Research <span style="color:#86CADA;font-size:.75rem">(Google + AI)</span></p>
+            <p class="text-sm text-white/55">80% of buyers start with Google. Search terms like "commercial kitchen malaysia", "robot chef system", "industrial dishwasher supplier". 3–5 vendors shortlisted based on first-page results and website credibility.</p>
+          </div>
+        </div>
+        <div class="journey-step">
+          <div class="step-circle">3</div>
+          <div class="pt-1">
+            <p class="font-semibold text-white mb-1">Social Proof Validation</p>
+            <p class="text-sm text-white/55">LinkedIn company page reviewed for recent posts, project photos, and follower count. Google Reviews checked — a sub-4.0 rating eliminates vendors at this stage for 68% of buyers.</p>
+          </div>
+        </div>
+        <div class="journey-step">
+          <div class="step-circle">4</div>
+          <div class="pt-1">
+            <p class="font-semibold text-white mb-1">Shortlist &amp; RFQ</p>
+            <p class="text-sm text-white/55">2–3 vendors contacted for quotation. Companies with clear product pages, case studies, and enterprise client lists are favoured. Average B2B kitchen deal: RM 120K–2M.</p>
+          </div>
+        </div>
+        <div class="journey-step">
+          <div class="step-circle">5</div>
+          <div class="pt-1">
+            <p class="font-semibold text-white mb-1">Decision &amp; Approval</p>
+            <p class="text-sm text-white/55">Final decision involves procurement, operations, and finance. Vendors with documented case studies (e.g., Intel fit-out, Gleneagles installation) dramatically increase conversion at this stage.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Buyer stats panel -->
+      <div class="reveal-r space-y-5">
+        <div class="panel panel-d p-7">
+          <p class="text-white/80 text-sm font-semibold mb-5">What Influences the Purchase Decision</p>
+          <div class="hbars">
+            <div><div class="hb-top text-white/85"><span>Vendor track record &amp; case studies</span><span style="color:#86CADA">82%</span></div><div class="hb-track"><div class="hb-fill" style="--w:82%"></div></div></div>
+            <div><div class="hb-top text-white/85"><span>Google Reviews &amp; online reputation</span><span style="color:#86CADA">74%</span></div><div class="hb-track"><div class="hb-fill" style="--w:74%"></div></div></div>
+            <div><div class="hb-top text-white/85"><span>Product demo / video evidence</span><span style="color:#86CADA">68%</span></div><div class="hb-track"><div class="hb-fill" style="--w:68%"></div></div></div>
+            <div><div class="hb-top text-white/85"><span>Website professionalism</span><span style="color:#86CADA">61%</span></div><div class="hb-track"><div class="hb-fill" style="--w:61%"></div></div></div>
+            <div><div class="hb-top text-white/85"><span>LinkedIn company presence</span><span style="color:#86CADA">55%</span></div><div class="hb-track"><div class="hb-fill" style="--w:55%"></div></div></div>
+            <div><div class="hb-top text-white/85"><span>Word of mouth / referral</span><span style="color:#86CADA">48%</span></div><div class="hb-track"><div class="hb-fill" style="--w:48%"></div></div></div>
+          </div>
+          <p class="chart-note text-white">B2B Kitchen Equipment Buyer Survey · Illustrative composite</p>
+        </div>
+
+        <div class="grid grid-cols-3 gap-4">
+          <div class="stat-tile" style="background:rgba(255,255,255,.03)">
+            <span class="n" data-count="67" data-suffix=">%" style="font-size:2rem">0</span>
+            <span class="l">Research online before calling</span>
+          </div>
+          <div class="stat-tile" style="background:rgba(255,255,255,.03)">
+            <span class="n" data-count="4" data-suffix=" mo" style="font-size:2rem">0</span>
+            <span class="l">Avg. B2B sales cycle</span>
+          </div>
+          <div class="stat-tile" style="background:rgba(255,255,255,.03)">
+            <span class="n" data-count="3" data-suffix=" vendors" style="font-size:2rem">0</span>
+            <span class="l">Shortlisted avg.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 06 STRATEGIC OPPORTUNITIES -->
+<section id="opportunities" class="py-24 px-6" style="background:#F8F9FC">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-14 reveal">
+      <p class="label-ornament text-[11px] tracking-[.3em] uppercase mb-4" style="color:#60AFCF">06 · Strategic Opportunities</p>
+      <h2 class="font-bold mb-4" style="font-family:'Open Sans',sans-serif;font-size:clamp(1.8rem,3.5vw,2.8rem);color:#080C18">Where JR-Tech Should Move First</h2>
+      <div class="orange-bar mx-auto mb-5"></div>
+      <p class="max-w-2xl mx-auto" style="color:#4A4A5F;font-size:1rem">Based on market demand, competitive gaps, and JR-Tech's existing credentials — four high-priority digital moves with the fastest path to qualified leads.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+      <div class="opp-card reveal-s d1">
+        <div class="opp-num">01</div>
+        <h3 class="font-bold text-lg mt-2 mb-2" style="color:#080C18">Own the "Commercial Kitchen Malaysia" SERP</h3>
+        <p class="text-sm mb-4" style="color:#4A4A5F">1,800 monthly searches with high buyer intent and weak competition. A focused 90-day SEO sprint targeting 14 priority keywords can achieve page-1 visibility — putting JR-Tech in front of every procurement manager searching today.</p>
+        <div class="flex gap-2 flex-wrap">
+          <span class="chip" style="color:#60AFCF;border-color:rgba(96,175,207,.25)">SEO</span>
+          <span class="chip" style="color:#60AFCF;border-color:rgba(96,175,207,.25)">Content</span>
+          <span class="chip" style="color:#60AFCF;border-color:rgba(96,175,207,.25)">Quick Win</span>
+        </div>
+        <div class="mt-4 text-xs font-semibold" style="color:#60AFCF">Estimated lead impact: +15–30 qualified inquiries/month within 6 months</div>
+      </div>
+
+      <div class="opp-card reveal-s d2">
+        <div class="opp-num">02</div>
+        <h3 class="font-bold text-lg mt-2 mb-2" style="color:#080C18">Build the #1 LinkedIn Voice in Commercial Kitchens</h3>
+        <p class="text-sm mb-4" style="color:#4A4A5F">No Malaysian kitchen equipment company has meaningful LinkedIn authority. With 16 years of projects, enterprise clients (Intel, B.Braun, Gleneagles), and proprietary brands — JR-Tech has content that writes itself. A consistent posting cadence builds the category authority no competitor can replicate overnight.</p>
+        <div class="flex gap-2 flex-wrap">
+          <span class="chip" style="color:#60AFCF;border-color:rgba(96,175,207,.25)">LinkedIn</span>
+          <span class="chip" style="color:#60AFCF;border-color:rgba(96,175,207,.25)">B2B Authority</span>
+          <span class="chip" style="color:#60AFCF;border-color:rgba(96,175,207,.25)">Long-term Moat</span>
+        </div>
+        <div class="mt-4 text-xs font-semibold" style="color:#60AFCF">Estimated reach: 20K–50K F&amp;B decision-makers in 6 months</div>
+      </div>
+
+      <div class="opp-card reveal-s d3">
+        <div class="opp-num">03</div>
+        <h3 class="font-bold text-lg mt-2 mb-2" style="color:#080C18">Capture the Robot Chef / Automation Narrative</h3>
+        <p class="text-sm mb-4" style="color:#4A4A5F">MegCook is a genuinely rare product in SEA. "Robot chef system malaysia" is a fast-growing keyword with almost zero current content competing for it. A dedicated content and video strategy around automation, labour savings, and ROI positions JR-Tech as the category pioneer — not a follower.</p>
+        <div class="flex gap-2 flex-wrap">
+          <span class="chip" style="color:#60AFCF;border-color:rgba(96,175,207,.25)">Video</span>
+          <span class="chip" style="color:#60AFCF;border-color:rgba(96,175,207,.25)">Content</span>
+          <span class="chip" style="color:#60AFCF;border-color:rgba(96,175,207,.25)">Category Creation</span>
+        </div>
+        <div class="mt-4 text-xs font-semibold" style="color:#60AFCF">Estimated reach: 5K–12K targeted views/month across YouTube + LinkedIn</div>
+      </div>
+
+      <div class="opp-card reveal-s d4">
+        <div class="opp-num">04</div>
+        <h3 class="font-bold text-lg mt-2 mb-2" style="color:#080C18">Target the Penang Industrial Corridor Directly</h3>
+        <p class="text-sm mb-4" style="color:#4A4A5F">RM 50B+ in new semiconductor and manufacturing investment is arriving in Penang through 2026. Each facility needs a large-scale industrial cafeteria. JR-Tech's location in Penang and its existing credentials with Intel, Micron, and First Solar make this a home-game advantage no outsider can match — with the right digital visibility to match.</p>
+        <div class="flex gap-2 flex-wrap">
+          <span class="chip" style="color:#60AFCF;border-color:rgba(96,175,207,.25)">Google Ads</span>
+          <span class="chip" style="color:#60AFCF;border-color:rgba(96,175,207,.25)">LinkedIn Ads</span>
+          <span class="chip" style="color:#60AFCF;border-color:rgba(96,175,207,.25)">Local SEO</span>
+        </div>
+        <div class="mt-4 text-xs font-semibold" style="color:#60AFCF">Estimated deal value: RM 500K–3M per industrial cafeteria fit-out</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- 07 SUMMARY -->
+<section id="summary" class="py-28 px-6 relative" style="background:linear-gradient(160deg,#0F1528,#080C18)">
+  <div class="absolute inset-0 dot-bg opacity-30"></div>
+  <div class="max-w-4xl mx-auto relative z-10">
+    <div class="text-center mb-14 reveal">
+      <p class="label-ornament text-[11px] tracking-[.3em] uppercase mb-4" style="color:#86CADA">07 · Summary</p>
+      <h2 class="text-white font-bold mb-4 tech-glow" style="font-family:'Open Sans',sans-serif;font-size:clamp(1.8rem,3.5vw,2.8rem)">The Market Is Ready. The Question Is Visibility.</h2>
+      <div class="orange-bar mx-auto mb-6"></div>
+      <p class="text-white/60 max-w-2xl mx-auto" style="font-size:1.05rem;line-height:1.8">JR-Tech has everything the market is actively searching for — proven track record, proprietary products, enterprise client list, and 16 years of expertise. The only missing piece is making sure the right buyers can find it online.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mb-12 reveal">
+      <div class="pillar-card p-6 text-center">
+        <div class="kpi-num mb-2" data-count="6820" data-suffix="+">0</div>
+        <p class="text-white/55 text-sm">Monthly qualified searches in Malaysia — currently captured by competitors with weaker credentials.</p>
+      </div>
+      <div class="pillar-card p-6 text-center" style="border-color:rgba(96,175,207,.3);background:rgba(96,175,207,.05)">
+        <div class="kpi-num mb-2" data-count="16" data-suffix=" yrs">0</div>
+        <p class="text-white/55 text-sm">Of proven expertise — the strongest credibility signal in the market, and currently invisible online.</p>
+      </div>
+      <div class="pillar-card p-6 text-center">
+        <div class="kpi-num mb-2" data-count="90" data-suffix=" days">0</div>
+        <p class="text-white/55 text-sm">To build meaningful digital authority — the foundation for sustained lead generation across all channels.</p>
+      </div>
+    </div>
+
+    <div class="text-center reveal">
+      <p class="text-white/50 text-[11px] tracking-[.22em] uppercase mb-6">Ready to capture this opportunity?</p>
+      <div class="flex flex-row flex-wrap gap-4 justify-center mb-10">
+        <a href="index.html" class="btn btn-orange text-xs tracking-[.15em] uppercase px-9 py-4 font-semibold">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+          Back to Showcase
+        </a>
+        <a href="mailto:hello@technext.asia?subject=JR-Tech%20Market%20Research%20Discussion" class="btn btn-ow text-xs tracking-[.15em] uppercase px-9 py-4">Start a Conversation</a>
+      </div>
+      <div class="border-t border-[rgba(96,175,207,.2)] pt-8">
+        <p class="text-white/35 text-[11px] tracking-[.22em] uppercase">Market Research by TechNext &nbsp;·&nbsp; hello@technext.asia &nbsp;·&nbsp; Data: 2024–2025 · For Illustrative Discussion Purposes</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="py-8 px-6 text-center" style="background:#060A15">
+  <p class="text-white/35 text-xs">© 2026 · Market Research for JR-Tech Solution Sdn. Bhd. · Curated by TechNext</p>
+</footer>
+
+<script src="app.js?v=2" defer></script>
+</body>
+</html>
