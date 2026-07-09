@@ -62,14 +62,20 @@ if(fine && !reduce){
   (function loop(){cx+=(gx-cx)*.15;cy+=(gy-cy)*.15;glow.style.left=cx+'px';glow.style.top=cy+'px';requestAnimationFrame(loop);})();
 
   // ── Card 3D tilt + spotlight ──
-  document.querySelectorAll('.pillar-card, .img-card, .brand-card, .panel, .ai-card, .icard').forEach(function(card){
+  document.querySelectorAll('.pillar-card, .img-card, .brand-card, .panel, .ai-card, .icard, .ov-card, .tilt, .opp-card, .stat-tile').forEach(function(card){
     var isImg=card.classList.contains('img-card');
+    // Only insert a spotlight layer on cards whose CSS keeps content above it
+    var spotOK=/(pillar-card|brand-card|panel|ai-card|icard|ov-card|opp-card)/.test(card.className);
     var spot=null;
-    if(!isImg){spot=document.createElement('div');spot.className='spot';card.insertBefore(spot,card.firstChild);}
-    var amt=card.classList.contains('panel')?4:isImg?5:card.classList.contains('ai-card')?6:8;
+    if(spotOK){spot=document.createElement('div');spot.className='spot';card.insertBefore(spot,card.firstChild);}
+    var amt=card.classList.contains('panel')?4
+      :card.classList.contains('browser')||card.classList.contains('video-ph')?7
+      :isImg||card.classList.contains('ai-tile')||card.classList.contains('post-card')?9
+      :card.classList.contains('ai-card')||card.classList.contains('stat-tile')?6:8;
+    var lift=card.classList.contains('post-card')||card.classList.contains('ai-tile')?-4:-6;
     card.addEventListener('mousemove',function(e){
       var r=card.getBoundingClientRect(), px=(e.clientX-r.left)/r.width, py=(e.clientY-r.top)/r.height;
-      card.style.transform='perspective(850px) rotateY('+((px-.5)*amt).toFixed(2)+'deg) rotateX('+((.5-py)*amt).toFixed(2)+'deg) translateY(-6px)';
+      card.style.transform='perspective(850px) rotateY('+((px-.5)*amt).toFixed(2)+'deg) rotateX('+((.5-py)*amt).toFixed(2)+'deg) translateY('+lift+'px)';
       if(spot){spot.style.setProperty('--mx',(px*100)+'%');spot.style.setProperty('--my',(py*100)+'%');}
     });
     card.addEventListener('mouseleave',function(){card.style.transform='';});

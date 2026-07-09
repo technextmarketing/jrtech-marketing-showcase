@@ -217,3 +217,8 @@ h2[style*="Open Sans"]{font-size:clamp(2rem,4.6vw,3.4rem)!important;line-height:
 @media(hover:none),(max-width:767px){#cursor-glow{display:none!important}.mag{transform:none!important}.spot{display:none}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.reveal,.reveal-l,.reveal-r,.reveal-s{opacity:1!important;transform:none!important}.marquee-track{animation:none}.orange-anim{animation:none}}
 @media(max-width:767px){.grid-field{display:none}.btn:hover{transform:none}.pillar-card:hover,.phase-card:hover{transform:none}.kpi-num{font-size:3rem}}
+
+/* ── Revamp v3: extend 3D depth + spotlight to new interactive cards ── */
+.ov-card,.tilt,.post-card,.ai-tile,.browser,.video-ph,.opp-card,.stat-tile{transform-style:preserve-3d;will-change:transform}
+.ov-card>*:not(.spot),.opp-card>*:not(.spot){position:relative;z-index:1}
+.ov-card:hover .spot,.opp-card:hover .spot{opacity:1}
