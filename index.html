@@ -11,9 +11,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Bebas+Neue&display=swap" rel="stylesheet"/>
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
-tailwind.config={theme:{extend:{colors:{steel:{'DEFAULT':'#080C18','light':'#0F1528','mid':'#141A32'},metal:{'DEFAULT':'#60AFCF','light':'#86CADA','pale':'#EDF5F8'},silver:{'DEFAULT':'#F8F9FC','dark':'#EEF2F8','deeper':'#E2E8F4'}},fontFamily:{display:['Open Sans','system-ui','sans-serif'],body:['Open Sans','system-ui','sans-serif'],alt:['Bebas Neue','cursive','sans-serif']}}}}
+tailwind.config={theme:{extend:{colors:{steel:{'DEFAULT':'#080C18','light':'#0F1528','mid':'#141A32'},metal:{'DEFAULT':'#9CBAE3','light':'#BFD5F0','pale':'#EEF3FB'},silver:{'DEFAULT':'#F8F9FC','dark':'#EEF2F8','deeper':'#E2E8F4'}},fontFamily:{display:['Open Sans','system-ui','sans-serif'],body:['Open Sans','system-ui','sans-serif'],alt:['Bebas Neue','cursive','sans-serif']}}}}
 </script>
-<link rel="stylesheet" href="styles.css?v=4"/>
+<link rel="stylesheet" href="styles.css?v=5"/>
 <style>
 /* ===== Visual revamp: focus sections, galleries & rich interaction ===== */
 .focus-sec{padding:110px 24px;position:relative;overflow:hidden}
@@ -23,27 +23,27 @@ tailwind.config={theme:{extend:{colors:{steel:{'DEFAULT':'#080C18','light':'#0F1
 /* Text effects: moving color + reflection (no glow) */
 @keyframes flowMove{0%{background-position:0% 50%}100%{background-position:200% 50%}}
 .flow{background-size:200% auto;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;animation:flowMove 6s linear infinite;padding-bottom:.04em}
-.flow-d{background-image:linear-gradient(90deg,#86CADA,#C8E8F2,#F2FAFC,#86CADA,#60AFCF,#86CADA)}
-.flow-l{background-image:linear-gradient(90deg,#134F6C,#2A7A9F,#3E8FAF,#2A7A9F,#134F6C)}
-.reflect{-webkit-box-reflect:below -4px linear-gradient(transparent 52%,rgba(96,175,207,.22))}
+.flow-d{background-image:linear-gradient(90deg,#BFD5F0,#DCE8F7,#F4F7FD,#BFD5F0,#9CBAE3,#BFD5F0)}
+.flow-l{background-image:linear-gradient(90deg,#2E4A78,#46689C,#5E7FB8,#46689C,#2E4A78)}
+.reflect{-webkit-box-reflect:below -4px linear-gradient(transparent 52%,rgba(156,186,227,.22))}
 @media(prefers-reduced-motion:reduce){.flow{animation:none}}
 
 /* Benefit chips */
 .chip-row{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
-.bchip{display:inline-flex;align-items:center;gap:7px;font-size:.92rem;font-weight:600;letter-spacing:.02em;padding:8px 16px;border-radius:99px;border:1px solid rgba(96,175,207,.28);background:rgba(96,175,207,.06);transition:transform .35s cubic-bezier(.34,1.6,.64,1),background .35s ease,border-color .35s ease}
-.bchip:hover{transform:translateY(-3px);background:rgba(96,175,207,.14);border-color:rgba(96,175,207,.5)}
-.bchip .dot{width:6px;height:6px;border-radius:50%;background:#60AFCF}
+.bchip{display:inline-flex;align-items:center;gap:7px;font-size:.92rem;font-weight:600;letter-spacing:.02em;padding:8px 16px;border-radius:99px;border:1px solid rgba(156,186,227,.28);background:rgba(156,186,227,.06);transition:transform .35s cubic-bezier(.34,1.6,.64,1),background .35s ease,border-color .35s ease}
+.bchip:hover{transform:translateY(-3px);background:rgba(156,186,227,.14);border-color:rgba(156,186,227,.5)}
+.bchip .dot{width:6px;height:6px;border-radius:50%;background:#9CBAE3}
 
 /* Overview cards */
-.ov-card{position:relative;border-radius:18px;padding:34px 28px;background:rgba(255,255,255,.04);border:1px solid rgba(96,175,207,.16);overflow:hidden;cursor:pointer;transition:transform .5s cubic-bezier(.34,1.4,.64,1),box-shadow .5s ease,border-color .4s ease,background .4s ease}
-.ov-card:hover{background:rgba(96,175,207,.06);border-color:rgba(96,175,207,.45);box-shadow:0 28px 64px rgba(0,0,0,.4)}
-.ov-ic{width:62px;height:62px;border-radius:16px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,rgba(96,175,207,.16),rgba(96,175,207,.04));border:1px solid rgba(96,175,207,.3);margin-bottom:20px;transition:transform .5s cubic-bezier(.34,1.6,.64,1)}
+.ov-card{position:relative;border-radius:18px;padding:34px 28px;background:rgba(255,255,255,.04);border:1px solid rgba(156,186,227,.16);overflow:hidden;cursor:pointer;transition:transform .5s cubic-bezier(.34,1.4,.64,1),box-shadow .5s ease,border-color .4s ease,background .4s ease}
+.ov-card:hover{background:rgba(156,186,227,.06);border-color:rgba(156,186,227,.45);box-shadow:0 28px 64px rgba(0,0,0,.4)}
+.ov-ic{width:62px;height:62px;border-radius:16px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,rgba(156,186,227,.16),rgba(156,186,227,.04));border:1px solid rgba(156,186,227,.3);margin-bottom:20px;transition:transform .5s cubic-bezier(.34,1.6,.64,1)}
 .ov-card:hover .ov-ic{transform:translateY(-4px) scale(1.08) rotate(-4deg)}
-.ov-num{position:absolute;top:18px;right:22px;font-family:'Bebas Neue',cursive;font-size:2.4rem;color:rgba(96,175,207,.18);transition:color .4s ease}
-.ov-card:hover .ov-num{color:rgba(96,175,207,.4)}
+.ov-num{position:absolute;top:18px;right:22px;font-family:'Bebas Neue',cursive;font-size:2.4rem;color:rgba(156,186,227,.18);transition:color .4s ease}
+.ov-card:hover .ov-num{color:rgba(156,186,227,.4)}
 
 /* Placeholder tag */
-.ph-tag{position:absolute;top:11px;right:13px;z-index:5;font-size:8.5px;letter-spacing:.16em;color:rgba(134,202,218,.8);background:rgba(8,12,24,.7);border:1px solid rgba(96,175,207,.32);padding:3px 9px;border-radius:5px;font-weight:700}
+.ph-tag{position:absolute;top:11px;right:13px;z-index:5;font-size:8.5px;letter-spacing:.16em;color:rgba(191,213,240,.8);background:rgba(8,12,24,.7);border:1px solid rgba(156,186,227,.32);padding:3px 9px;border-radius:5px;font-weight:700}
 .ph-cap{text-align:center;font-size:.88rem;margin-top:22px;color:#9A9AB0;letter-spacing:.03em}
 
 /* ── Social masonry gallery ── */
@@ -51,52 +51,52 @@ tailwind.config={theme:{extend:{colors:{steel:{'DEFAULT':'#080C18','light':'#0F1
 @media(min-width:640px){.masonry{column-count:2}}
 @media(min-width:1024px){.masonry{column-count:3}}
 .masonry>*{break-inside:avoid;margin-bottom:20px}
-.post-card{position:relative;background:#0F1528;border:1px solid rgba(96,175,207,.16);border-radius:16px;overflow:hidden;transition:transform .55s cubic-bezier(.34,1.4,.64,1),box-shadow .55s ease,border-color .4s ease}
-.post-card:hover{border-color:rgba(96,175,207,.5);box-shadow:0 26px 58px rgba(0,0,0,.5)}
+.post-card{position:relative;background:#0F1528;border:1px solid rgba(156,186,227,.16);border-radius:16px;overflow:hidden;transition:transform .55s cubic-bezier(.34,1.4,.64,1),box-shadow .55s ease,border-color .4s ease}
+.post-card:hover{border-color:rgba(156,186,227,.5);box-shadow:0 26px 58px rgba(0,0,0,.5)}
 .post-head{display:flex;align-items:center;gap:10px;padding:13px 15px}
-.post-ava{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#3E8FAF,#86CADA);flex-shrink:0}
-.post-plat{margin-left:auto;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:#86CADA;border:1px solid rgba(96,175,207,.3);border-radius:5px;padding:3px 8px}
-.post-media{background:linear-gradient(135deg,rgba(96,175,207,.14),rgba(96,175,207,.03));border-block:1px solid rgba(96,175,207,.1);display:flex;align-items:center;justify-content:center;color:rgba(134,202,218,.45);overflow:hidden}
+.post-ava{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#5E7FB8,#BFD5F0);flex-shrink:0}
+.post-plat{margin-left:auto;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:#BFD5F0;border:1px solid rgba(156,186,227,.3);border-radius:5px;padding:3px 8px}
+.post-media{background:linear-gradient(135deg,rgba(156,186,227,.14),rgba(156,186,227,.03));border-block:1px solid rgba(156,186,227,.1);display:flex;align-items:center;justify-content:center;color:rgba(191,213,240,.45);overflow:hidden}
 .post-media svg{transition:transform .6s cubic-bezier(.34,1.3,.64,1)}
 .post-card:hover .post-media svg{transform:scale(1.12) rotate(3deg)}
 .post-body{padding:13px 15px}
 .ln{height:8px;border-radius:4px;background:rgba(255,255,255,.08);margin-bottom:9px}
-.post-foot{display:flex;gap:18px;padding:2px 15px 15px;color:rgba(134,202,218,.5)}
+.post-foot{display:flex;gap:18px;padding:2px 15px 15px;color:rgba(191,213,240,.5)}
 .post-foot svg{transition:transform .3s ease}
 .post-card:hover .post-foot svg:hover{transform:scale(1.25)}
 
 /* ── Browser mockup ── */
-.browser{position:relative;border-radius:16px;overflow:hidden;border:1px solid rgba(96,175,207,.22);background:#0B1120;box-shadow:0 34px 90px rgba(0,0,0,.6);transition:transform .55s cubic-bezier(.34,1.4,.64,1),box-shadow .55s ease,border-color .4s ease}
-.browser:hover{border-color:rgba(96,175,207,.5);box-shadow:0 50px 120px rgba(0,0,0,.7)}
-.browser-bar{display:flex;align-items:center;gap:8px;padding:13px 16px;background:#0F1528;border-bottom:1px solid rgba(96,175,207,.14)}
+.browser{position:relative;border-radius:16px;overflow:hidden;border:1px solid rgba(156,186,227,.22);background:#0B1120;box-shadow:0 34px 90px rgba(0,0,0,.6);transition:transform .55s cubic-bezier(.34,1.4,.64,1),box-shadow .55s ease,border-color .4s ease}
+.browser:hover{border-color:rgba(156,186,227,.5);box-shadow:0 50px 120px rgba(0,0,0,.7)}
+.browser-bar{display:flex;align-items:center;gap:8px;padding:13px 16px;background:#0F1528;border-bottom:1px solid rgba(156,186,227,.14)}
 .bdot{width:11px;height:11px;border-radius:50%}
-.browser-url{flex:1;margin-left:10px;height:28px;border-radius:8px;background:rgba(255,255,255,.05);border:1px solid rgba(96,175,207,.14);display:flex;align-items:center;padding:0 13px;font-size:11px;color:rgba(255,255,255,.5)}
+.browser-url{flex:1;margin-left:10px;height:28px;border-radius:8px;background:rgba(255,255,255,.05);border:1px solid rgba(156,186,227,.14);display:flex;align-items:center;padding:0 13px;font-size:11px;color:rgba(255,255,255,.5)}
 .site{background:linear-gradient(180deg,#0B1120,#0E1526)}
-.site-nav{display:flex;align-items:center;justify-content:space-between;padding:18px 26px;border-bottom:1px solid rgba(96,175,207,.1)}
-.site-hero{padding:44px 26px 40px;text-align:center;background:radial-gradient(ellipse 60% 80% at 50% 0%,rgba(96,175,207,.12),transparent 70%)}
+.site-nav{display:flex;align-items:center;justify-content:space-between;padding:18px 26px;border-bottom:1px solid rgba(156,186,227,.1)}
+.site-hero{padding:44px 26px 40px;text-align:center;background:radial-gradient(ellipse 60% 80% at 50% 0%,rgba(156,186,227,.12),transparent 70%)}
 .blk{border-radius:6px;background:rgba(255,255,255,.09)}
 .blk.dim{background:rgba(255,255,255,.05)}
-.site-cta{height:34px;width:140px;margin:0 auto;border-radius:9px;background:linear-gradient(135deg,#3E8FAF,#86CADA);box-shadow:0 8px 22px rgba(96,175,207,.35)}
+.site-cta{height:34px;width:140px;margin:0 auto;border-radius:9px;background:linear-gradient(135deg,#5E7FB8,#BFD5F0);box-shadow:0 8px 22px rgba(156,186,227,.35)}
 .site-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;padding:8px 26px 34px}
-.site-card{border-radius:11px;border:1px solid rgba(96,175,207,.14);background:rgba(96,175,207,.05);padding:16px;transition:transform .4s ease,background .4s ease}
-.browser:hover .site-card{transform:translateY(-4px);background:rgba(96,175,207,.09)}
+.site-card{border-radius:11px;border:1px solid rgba(156,186,227,.14);background:rgba(156,186,227,.05);padding:16px;transition:transform .4s ease,background .4s ease}
+.browser:hover .site-card{transform:translateY(-4px);background:rgba(156,186,227,.09)}
 
 /* ── AI galleries ── */
-.gal{position:relative;border-radius:14px;overflow:hidden;border:1px solid rgba(96,175,207,.18);aspect-ratio:1/1;background:linear-gradient(135deg,rgba(96,175,207,.14),rgba(96,175,207,.02));transition:transform .55s cubic-bezier(.34,1.4,.64,1),box-shadow .55s ease,border-color .4s ease}
-.gal:hover{border-color:rgba(96,175,207,.55);box-shadow:0 24px 54px rgba(0,0,0,.55)}
-.gal-inner{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:rgba(134,202,218,.4);transition:transform .65s cubic-bezier(.34,1.3,.64,1)}
+.gal{position:relative;border-radius:14px;overflow:hidden;border:1px solid rgba(156,186,227,.18);aspect-ratio:1/1;background:linear-gradient(135deg,rgba(156,186,227,.14),rgba(156,186,227,.02));transition:transform .55s cubic-bezier(.34,1.4,.64,1),box-shadow .55s ease,border-color .4s ease}
+.gal:hover{border-color:rgba(156,186,227,.55);box-shadow:0 24px 54px rgba(0,0,0,.55)}
+.gal-inner{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:rgba(191,213,240,.4);transition:transform .65s cubic-bezier(.34,1.3,.64,1)}
 .gal:hover .gal-inner{transform:scale(1.12)}
 .gal-cap{position:absolute;left:0;right:0;bottom:0;z-index:3;padding:30px 13px 12px;background:linear-gradient(to top,rgba(4,7,18,.92),transparent);color:#fff;font-size:.72rem;letter-spacing:.03em;transform:translateY(101%);opacity:0;transition:transform .45s cubic-bezier(.34,1.3,.64,1),opacity .4s ease}
 .gal:hover .gal-cap{transform:translateY(0);opacity:1}
-.ai-badge{position:absolute;top:9px;left:9px;z-index:4;font-size:8px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:#fff;background:linear-gradient(135deg,#2A7A9F,#5BAFC4);padding:3px 8px;border-radius:5px}
+.ai-badge{position:absolute;top:9px;left:9px;z-index:4;font-size:8px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:#fff;background:linear-gradient(135deg,#46689C,#7E9AD1);padding:3px 8px;border-radius:5px}
 
 /* Video placeholder */
-.video-ph{position:relative;aspect-ratio:16/9;border-radius:18px;overflow:hidden;border:1px solid rgba(96,175,207,.2);background:linear-gradient(135deg,rgba(96,175,207,.14),rgba(8,12,24,.55));display:flex;align-items:center;justify-content:center;transition:transform .55s cubic-bezier(.34,1.4,.64,1),box-shadow .55s ease}
+.video-ph{position:relative;aspect-ratio:16/9;border-radius:18px;overflow:hidden;border:1px solid rgba(156,186,227,.2);background:linear-gradient(135deg,rgba(156,186,227,.14),rgba(8,12,24,.55));display:flex;align-items:center;justify-content:center;transition:transform .55s cubic-bezier(.34,1.4,.64,1),box-shadow .55s ease}
 .video-ph:hover{box-shadow:0 36px 80px rgba(0,0,0,.6)}
-.play-btn{width:76px;height:76px;border-radius:50%;background:rgba(96,175,207,.15);border:2px solid rgba(134,202,218,.65);display:flex;align-items:center;justify-content:center;transition:transform .4s ease,background .4s ease;animation:pulse-ring 2.6s ease-out infinite}
-.video-ph:hover .play-btn{transform:scale(1.16);background:rgba(96,175,207,.32)}
-.play-btn::before{content:'';border-style:solid;border-width:13px 0 13px 22px;border-color:transparent transparent transparent #C8E8F2;margin-left:6px}
-@keyframes pulse-ring{0%{box-shadow:0 0 0 0 rgba(134,202,218,.35)}70%{box-shadow:0 0 0 26px rgba(134,202,218,0)}100%{box-shadow:0 0 0 0 rgba(134,202,218,0)}}
+.play-btn{width:76px;height:76px;border-radius:50%;background:rgba(156,186,227,.15);border:2px solid rgba(191,213,240,.65);display:flex;align-items:center;justify-content:center;transition:transform .4s ease,background .4s ease;animation:pulse-ring 2.6s ease-out infinite}
+.video-ph:hover .play-btn{transform:scale(1.16);background:rgba(156,186,227,.32)}
+.play-btn::before{content:'';border-style:solid;border-width:13px 0 13px 22px;border-color:transparent transparent transparent #DCE8F7;margin-left:6px}
+@keyframes pulse-ring{0%{box-shadow:0 0 0 0 rgba(191,213,240,.35)}70%{box-shadow:0 0 0 26px rgba(191,213,240,0)}100%{box-shadow:0 0 0 0 rgba(191,213,240,0)}}
 
 /* Continuous float */
 @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
@@ -117,7 +117,7 @@ tailwind.config={theme:{extend:{colors:{steel:{'DEFAULT':'#080C18','light':'#0F1
 <button id="toTop" aria-label="Back to top"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/></svg></button>
 
 <!-- NAV -->
-<nav class="fixed top-0 left-0 right-0 z-50 px-6 lg:px-12 py-4" id="nav" style="background:rgba(8,12,24,.55);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid rgba(96,175,207,.18)">
+<nav class="fixed top-0 left-0 right-0 z-50 px-6 lg:px-12 py-4" id="nav" style="background:rgba(8,12,24,.55);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid rgba(156,186,227,.18)">
   <div class="max-w-6xl mx-auto flex items-center justify-between">
     <a href="https://technextsg.github.io/jrtech-website/" target="_blank" style="text-decoration:none;display:flex;align-items:center">
       <img src="https://technextsg.github.io/jrtech-website/img/JR-Tech-Logo_Final-white.png" alt="JR-Tech Solution Sdn. Bhd." style="height:38px;width:auto">
@@ -145,7 +145,7 @@ tailwind.config={theme:{extend:{colors:{steel:{'DEFAULT':'#080C18','light':'#0F1
       <em class="font-normal orange-anim not-italic">Sdn. Bhd.</em>
     </h1>
     <p class="text-white/75 mb-4" style="font-family:'Open Sans',sans-serif;font-size:1.32rem;line-height:1.7">
-      Three ways we'll grow the brand online — <strong style="color:#86CADA;font-weight:600">social media</strong>, a <strong style="color:#86CADA;font-weight:600">website</strong>, and <strong style="color:#86CADA;font-weight:600">AI-generated content</strong>.
+      Three ways we'll grow the brand online — <strong style="color:#BFD5F0;font-weight:600">social media</strong>, a <strong style="color:#BFD5F0;font-weight:600">website</strong>, and <strong style="color:#BFD5F0;font-weight:600">AI-generated content</strong>.
     </p>
     <p class="text-white/55 text-[11px] tracking-[.22em] uppercase mb-11">
       Digital Marketing Showcase &nbsp;·&nbsp; Curated by TechNext
@@ -193,7 +193,7 @@ tailwind.config={theme:{extend:{colors:{steel:{'DEFAULT':'#080C18','light':'#0F1
 <section id="overview" class="py-24 px-6" style="background:#080C18">
   <div class="max-w-6xl mx-auto">
     <div class="text-center mb-16 reveal">
-      <p class="label-ornament text-[11px] tracking-[.3em] uppercase mb-4" style="color:#86CADA">What We'll Focus On</p>
+      <p class="label-ornament text-[11px] tracking-[.3em] uppercase mb-4" style="color:#BFD5F0">What We'll Focus On</p>
       <h2 class="focus-h flow flow-d mb-5">Three Ways to Grow JR-Tech Online</h2>
       <div class="orange-bar mx-auto mb-6"></div>
       <p class="text-white/65 max-w-2xl mx-auto" style="font-size:1.2rem">A visual-first digital strategy built around three high-impact pillars — turning JR-Tech's 16-year reputation into online visibility and leads.</p>
@@ -203,31 +203,31 @@ tailwind.config={theme:{extend:{colors:{steel:{'DEFAULT':'#080C18','light':'#0F1
       <a href="#social" class="ov-card reveal-s d1 block" style="text-decoration:none">
         <span class="ov-num">01</span>
         <div class="ov-ic">
-          <svg width="30" height="30" fill="none" stroke="#60AFCF" stroke-width="1.5" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="#86CADA"/></svg>
+          <svg width="30" height="30" fill="none" stroke="#9CBAE3" stroke-width="1.5" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="#BFD5F0"/></svg>
         </div>
         <h3 class="text-2xl font-extrabold mb-2 text-white">Social Media Posting</h3>
         <p class="text-base" style="color:rgba(255,255,255,.6)">Professional posts that keep JR-Tech visible and build trust with buyers.</p>
-        <span class="inline-flex items-center gap-2 mt-4 text-xs font-semibold" style="color:#86CADA">Explore <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></span>
+        <span class="inline-flex items-center gap-2 mt-4 text-xs font-semibold" style="color:#BFD5F0">Explore <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></span>
       </a>
 
       <a href="#website" class="ov-card reveal-s d2 block" style="text-decoration:none">
         <span class="ov-num">02</span>
         <div class="ov-ic">
-          <svg width="30" height="30" fill="none" stroke="#60AFCF" stroke-width="1.5" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 9h20"/><circle cx="5.5" cy="6.5" r=".6" fill="#86CADA"/><circle cx="7.8" cy="6.5" r=".6" fill="#86CADA"/></svg>
+          <svg width="30" height="30" fill="none" stroke="#9CBAE3" stroke-width="1.5" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 9h20"/><circle cx="5.5" cy="6.5" r=".6" fill="#BFD5F0"/><circle cx="7.8" cy="6.5" r=".6" fill="#BFD5F0"/></svg>
         </div>
         <h3 class="text-2xl font-extrabold mb-2 text-white">Website</h3>
         <p class="text-base" style="color:rgba(255,255,255,.6)">A professional digital storefront that wins credibility and converts searchers.</p>
-        <span class="inline-flex items-center gap-2 mt-4 text-xs font-semibold" style="color:#86CADA">Explore <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></span>
+        <span class="inline-flex items-center gap-2 mt-4 text-xs font-semibold" style="color:#BFD5F0">Explore <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></span>
       </a>
 
       <a href="#ai" class="ov-card reveal-s d3 block" style="text-decoration:none">
         <span class="ov-num">03</span>
         <div class="ov-ic">
-          <svg width="30" height="30" fill="none" stroke="#60AFCF" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><circle cx="18.5" cy="5" r=".9" fill="#86CADA"/><circle cx="5.5" cy="18" r=".9" fill="#86CADA"/></svg>
+          <svg width="30" height="30" fill="none" stroke="#9CBAE3" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><circle cx="18.5" cy="5" r=".9" fill="#BFD5F0"/><circle cx="5.5" cy="18" r=".9" fill="#BFD5F0"/></svg>
         </div>
         <h3 class="text-2xl font-extrabold mb-2 text-white">AI Video &amp; Image Generation</h3>
         <p class="text-base" style="color:rgba(255,255,255,.6)">Professional product visuals and demo videos — created fast and affordably with AI.</p>
-        <span class="inline-flex items-center gap-2 mt-4 text-xs font-semibold" style="color:#86CADA">Explore <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></span>
+        <span class="inline-flex items-center gap-2 mt-4 text-xs font-semibold" style="color:#BFD5F0">Explore <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></span>
       </a>
 
     </div>
@@ -238,14 +238,14 @@ tailwind.config={theme:{extend:{colors:{steel:{'DEFAULT':'#080C18','light':'#0F1
 <section id="social" class="focus-sec" style="background:#F8F9FC">
   <div class="max-w-6xl mx-auto">
     <div class="text-center mb-4 reveal">
-      <p class="focus-eyebrow" style="color:#60AFCF">01 · Social Media Posting</p>
+      <p class="focus-eyebrow" style="color:#5E7FB8">01 · Social Media Posting</p>
       <h2 class="focus-h flow flow-l mt-3 mb-4">Show Up Where Buyers Are</h2>
       <div class="orange-bar mx-auto mb-6"></div>
       <p class="max-w-2xl mx-auto mb-7" style="color:#4A4A5F;font-size:1.2rem;line-height:1.8">A steady stream of professional, on-brand posts keeps JR-Tech top-of-mind — building trust with F&amp;B operators and procurement managers long before the first sales call.</p>
       <div class="chip-row mb-2">
-        <span class="bchip" style="color:#3E8FAF"><span class="dot"></span>Brand Authority</span>
-        <span class="bchip" style="color:#3E8FAF"><span class="dot"></span>Real Projects Shown</span>
-        <span class="bchip" style="color:#3E8FAF"><span class="dot"></span>Always-On Presence</span>
+        <span class="bchip" style="color:#5E7FB8"><span class="dot"></span>Brand Authority</span>
+        <span class="bchip" style="color:#5E7FB8"><span class="dot"></span>Real Projects Shown</span>
+        <span class="bchip" style="color:#5E7FB8"><span class="dot"></span>Always-On Presence</span>
       </div>
     </div>
 
@@ -298,14 +298,14 @@ tailwind.config={theme:{extend:{colors:{steel:{'DEFAULT':'#080C18','light':'#0F1
 <section id="website" class="focus-sec" style="background:#080C18">
   <div class="max-w-5xl mx-auto">
     <div class="text-center mb-4 reveal">
-      <p class="focus-eyebrow" style="color:#86CADA">02 · Website</p>
+      <p class="focus-eyebrow" style="color:#BFD5F0">02 · Website</p>
       <h2 class="focus-h flow flow-d mt-3 mb-4">A Digital Storefront That Sells</h2>
       <div class="orange-bar mx-auto mb-6"></div>
       <p class="max-w-2xl mx-auto mb-7 text-white/70" style="font-size:1.2rem;line-height:1.8">A modern, professional website is JR-Tech's best salesperson — working 24/7 to win credibility, showcase products, and turn online searchers into quote requests.</p>
       <div class="chip-row mb-2">
-        <span class="bchip" style="color:#86CADA"><span class="dot"></span>Instant Credibility</span>
-        <span class="bchip" style="color:#86CADA"><span class="dot"></span>Converts to Leads</span>
-        <span class="bchip" style="color:#86CADA"><span class="dot"></span>One Home for Everything</span>
+        <span class="bchip" style="color:#BFD5F0"><span class="dot"></span>Instant Credibility</span>
+        <span class="bchip" style="color:#BFD5F0"><span class="dot"></span>Converts to Leads</span>
+        <span class="bchip" style="color:#BFD5F0"><span class="dot"></span>One Home for Everything</span>
       </div>
     </div>
 
@@ -321,8 +321,8 @@ tailwind.config={theme:{extend:{colors:{steel:{'DEFAULT':'#080C18','light':'#0F1
         </div>
         <div class="site">
           <div class="site-nav">
-            <div class="blk" style="width:78px;height:16px;background:rgba(134,202,218,.5)"></div>
-            <div style="display:flex;gap:16px"><div class="blk dim" style="width:44px;height:9px"></div><div class="blk dim" style="width:44px;height:9px"></div><div class="blk dim" style="width:44px;height:9px"></div><div class="blk" style="width:60px;height:22px;background:linear-gradient(135deg,#3E8FAF,#86CADA)"></div></div>
+            <div class="blk" style="width:78px;height:16px;background:rgba(191,213,240,.5)"></div>
+            <div style="display:flex;gap:16px"><div class="blk dim" style="width:44px;height:9px"></div><div class="blk dim" style="width:44px;height:9px"></div><div class="blk dim" style="width:44px;height:9px"></div><div class="blk" style="width:60px;height:22px;background:linear-gradient(135deg,#5E7FB8,#BFD5F0)"></div></div>
           </div>
           <div class="site-hero">
             <div class="blk" style="height:20px;width:64%;margin:0 auto 12px"></div>
@@ -331,9 +331,9 @@ tailwind.config={theme:{extend:{colors:{steel:{'DEFAULT':'#080C18','light':'#0F1
             <div class="site-cta"></div>
           </div>
           <div class="site-cards">
-            <div class="site-card"><div class="blk" style="height:60px;margin-bottom:12px;background:rgba(96,175,207,.12)"></div><div class="blk" style="height:9px;width:70%;margin-bottom:7px"></div><div class="blk dim" style="height:7px;width:90%"></div></div>
-            <div class="site-card"><div class="blk" style="height:60px;margin-bottom:12px;background:rgba(96,175,207,.12)"></div><div class="blk" style="height:9px;width:70%;margin-bottom:7px"></div><div class="blk dim" style="height:7px;width:90%"></div></div>
-            <div class="site-card"><div class="blk" style="height:60px;margin-bottom:12px;background:rgba(96,175,207,.12)"></div><div class="blk" style="height:9px;width:70%;margin-bottom:7px"></div><div class="blk dim" style="height:7px;width:90%"></div></div>
+            <div class="site-card"><div class="blk" style="height:60px;margin-bottom:12px;background:rgba(156,186,227,.12)"></div><div class="blk" style="height:9px;width:70%;margin-bottom:7px"></div><div class="blk dim" style="height:7px;width:90%"></div></div>
+            <div class="site-card"><div class="blk" style="height:60px;margin-bottom:12px;background:rgba(156,186,227,.12)"></div><div class="blk" style="height:9px;width:70%;margin-bottom:7px"></div><div class="blk dim" style="height:7px;width:90%"></div></div>
+            <div class="site-card"><div class="blk" style="height:60px;margin-bottom:12px;background:rgba(156,186,227,.12)"></div><div class="blk" style="height:9px;width:70%;margin-bottom:7px"></div><div class="blk dim" style="height:7px;width:90%"></div></div>
           </div>
         </div>
       </div>
@@ -346,14 +346,14 @@ tailwind.config={theme:{extend:{colors:{steel:{'DEFAULT':'#080C18','light':'#0F1
 <section id="ai" class="focus-sec" style="background:#F8F9FC">
   <div class="max-w-6xl mx-auto">
     <div class="text-center mb-4 reveal">
-      <p class="focus-eyebrow" style="color:#60AFCF">03 · AI Video &amp; Image Generation</p>
+      <p class="focus-eyebrow" style="color:#5E7FB8">03 · AI Video &amp; Image Generation</p>
       <h2 class="focus-h flow flow-l mt-3 mb-4">Studio-Quality Content, Without the Studio</h2>
       <div class="orange-bar mx-auto mb-6"></div>
       <p class="max-w-2xl mx-auto mb-7" style="color:#4A4A5F;font-size:1.2rem;line-height:1.8">AI produces professional product visuals and demo videos at a fraction of the usual cost and time — bringing MegCook, J-Nox and JR-Tech's full range to life without expensive shoots.</p>
       <div class="chip-row mb-2">
-        <span class="bchip" style="color:#3E8FAF"><span class="dot"></span>Fast Turnaround</span>
-        <span class="bchip" style="color:#3E8FAF"><span class="dot"></span>Affordable</span>
-        <span class="bchip" style="color:#3E8FAF"><span class="dot"></span>Content at Scale</span>
+        <span class="bchip" style="color:#5E7FB8"><span class="dot"></span>Fast Turnaround</span>
+        <span class="bchip" style="color:#5E7FB8"><span class="dot"></span>Affordable</span>
+        <span class="bchip" style="color:#5E7FB8"><span class="dot"></span>Content at Scale</span>
       </div>
     </div>
 
@@ -383,15 +383,15 @@ tailwind.config={theme:{extend:{colors:{steel:{'DEFAULT':'#080C18','light':'#0F1
 <section class="py-24 px-6 relative" style="background:linear-gradient(160deg,#0F1528,#080C18)">
   <div class="absolute inset-0 dot-bg opacity-30"></div>
   <div class="max-w-3xl mx-auto text-center relative z-10 reveal">
-    <p class="label-ornament text-[11px] tracking-[.3em] uppercase mb-5" style="color:#86CADA">The Vision</p>
+    <p class="label-ornament text-[11px] tracking-[.3em] uppercase mb-5" style="color:#BFD5F0">The Vision</p>
     <h2 class="focus-h flow flow-d reflect mb-6">Social. Website. AI Content. One Brand, Everywhere.</h2>
     <p class="text-white/70 max-w-2xl mx-auto" style="font-size:1.25rem;line-height:1.8">
       Together, these three pillars put JR-Tech's 16-year reputation in front of the right buyers — consistently, professionally, and at scale. For the full market context behind this strategy, see the
-      <a href="market-research.html" style="color:#86CADA;text-decoration:underline;text-underline-offset:3px">market research</a>.
+      <a href="market-research.html" style="color:#BFD5F0;text-decoration:underline;text-underline-offset:3px">market research</a>.
     </p>
   </div>
 </section>
 
-<script src="app.js?v=4" defer></script>
+<script src="app.js?v=5" defer></script>
 </body>
 </html>
