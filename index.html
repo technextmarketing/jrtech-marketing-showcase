@@ -17,12 +17,20 @@ tailwind.config={theme:{extend:{colors:{steel:{'DEFAULT':'#080C18','light':'#0F1
 <style>
 /* ===== Visual revamp: focus sections, galleries & rich interaction ===== */
 .focus-sec{padding:110px 24px;position:relative;overflow:hidden}
-.focus-eyebrow{font-size:11px;letter-spacing:.28em;text-transform:uppercase;font-weight:700}
-.focus-h{font-family:'Open Sans',sans-serif;font-weight:800;font-size:clamp(1.9rem,4vw,3rem);line-height:1.12}
+.focus-eyebrow{font-size:13px;letter-spacing:.3em;text-transform:uppercase;font-weight:700}
+.focus-h{font-family:'Open Sans',sans-serif;font-weight:800;font-size:clamp(2.4rem,5.2vw,4rem);line-height:1.08;letter-spacing:-.015em}
+
+/* Text effects: moving color + reflection (no glow) */
+@keyframes flowMove{0%{background-position:0% 50%}100%{background-position:200% 50%}}
+.flow{background-size:200% auto;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;animation:flowMove 6s linear infinite;padding-bottom:.04em}
+.flow-d{background-image:linear-gradient(90deg,#86CADA,#C8E8F2,#F2FAFC,#86CADA,#60AFCF,#86CADA)}
+.flow-l{background-image:linear-gradient(90deg,#134F6C,#2A7A9F,#3E8FAF,#2A7A9F,#134F6C)}
+.reflect{-webkit-box-reflect:below -4px linear-gradient(transparent 52%,rgba(96,175,207,.22))}
+@media(prefers-reduced-motion:reduce){.flow{animation:none}}
 
 /* Benefit chips */
 .chip-row{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
-.bchip{display:inline-flex;align-items:center;gap:7px;font-size:.78rem;font-weight:600;letter-spacing:.02em;padding:8px 16px;border-radius:99px;border:1px solid rgba(96,175,207,.28);background:rgba(96,175,207,.06);transition:transform .35s cubic-bezier(.34,1.6,.64,1),background .35s ease,border-color .35s ease}
+.bchip{display:inline-flex;align-items:center;gap:7px;font-size:.92rem;font-weight:600;letter-spacing:.02em;padding:8px 16px;border-radius:99px;border:1px solid rgba(96,175,207,.28);background:rgba(96,175,207,.06);transition:transform .35s cubic-bezier(.34,1.6,.64,1),background .35s ease,border-color .35s ease}
 .bchip:hover{transform:translateY(-3px);background:rgba(96,175,207,.14);border-color:rgba(96,175,207,.5)}
 .bchip .dot{width:6px;height:6px;border-radius:50%;background:#60AFCF}
 
@@ -36,7 +44,7 @@ tailwind.config={theme:{extend:{colors:{steel:{'DEFAULT':'#080C18','light':'#0F1
 
 /* Placeholder tag */
 .ph-tag{position:absolute;top:11px;right:13px;z-index:5;font-size:8.5px;letter-spacing:.16em;color:rgba(134,202,218,.8);background:rgba(8,12,24,.7);border:1px solid rgba(96,175,207,.32);padding:3px 9px;border-radius:5px;font-weight:700}
-.ph-cap{text-align:center;font-size:.75rem;margin-top:22px;color:#9A9AB0;letter-spacing:.03em}
+.ph-cap{text-align:center;font-size:.88rem;margin-top:22px;color:#9A9AB0;letter-spacing:.03em}
 
 /* ── Social masonry gallery ── */
 .masonry{column-count:1;column-gap:20px}
@@ -132,11 +140,11 @@ tailwind.config={theme:{extend:{colors:{steel:{'DEFAULT':'#080C18','light':'#0F1
       Digital Marketing Showcase · 2026
     </div>
     <p class="text-white/55 text-[11px] tracking-[.3em] uppercase mb-5">A Showcase for</p>
-    <h1 class="tech-glow text-white text-4xl md:text-6xl font-bold leading-[1.12] mb-6" style="font-family:'Open Sans',sans-serif">
-      JR-Tech Solution<br>
+    <h1 class="reflect font-extrabold leading-[1.06] mb-7" style="font-family:'Open Sans',sans-serif;letter-spacing:-.02em">
+      <span class="flow flow-d">JR-Tech Solution</span><br>
       <em class="font-normal orange-anim not-italic">Sdn. Bhd.</em>
     </h1>
-    <p class="text-white/70 mb-4" style="font-family:'Open Sans',sans-serif;font-size:1.15rem;line-height:1.75">
+    <p class="text-white/75 mb-4" style="font-family:'Open Sans',sans-serif;font-size:1.32rem;line-height:1.7">
       Three ways we'll grow the brand online — <strong style="color:#86CADA;font-weight:600">social media</strong>, a <strong style="color:#86CADA;font-weight:600">website</strong>, and <strong style="color:#86CADA;font-weight:600">AI-generated content</strong>.
     </p>
     <p class="text-white/55 text-[11px] tracking-[.22em] uppercase mb-11">
@@ -186,9 +194,9 @@ tailwind.config={theme:{extend:{colors:{steel:{'DEFAULT':'#080C18','light':'#0F1
   <div class="max-w-6xl mx-auto">
     <div class="text-center mb-16 reveal">
       <p class="label-ornament text-[11px] tracking-[.3em] uppercase mb-4" style="color:#86CADA">What We'll Focus On</p>
-      <h2 class="text-white focus-h mb-5">Three Ways to Grow JR-Tech Online</h2>
+      <h2 class="focus-h flow flow-d mb-5">Three Ways to Grow JR-Tech Online</h2>
       <div class="orange-bar mx-auto mb-6"></div>
-      <p class="text-white/65 max-w-2xl mx-auto" style="font-size:1.05rem">A visual-first digital strategy built around three high-impact pillars — turning JR-Tech's 16-year reputation into online visibility and leads.</p>
+      <p class="text-white/65 max-w-2xl mx-auto" style="font-size:1.2rem">A visual-first digital strategy built around three high-impact pillars — turning JR-Tech's 16-year reputation into online visibility and leads.</p>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
 
@@ -197,8 +205,8 @@ tailwind.config={theme:{extend:{colors:{steel:{'DEFAULT':'#080C18','light':'#0F1
         <div class="ov-ic">
           <svg width="30" height="30" fill="none" stroke="#60AFCF" stroke-width="1.5" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="#86CADA"/></svg>
         </div>
-        <h3 class="text-xl font-bold mb-2 text-white">Social Media Posting</h3>
-        <p class="text-sm" style="color:rgba(255,255,255,.6)">Professional posts that keep JR-Tech visible and build trust with buyers.</p>
+        <h3 class="text-2xl font-extrabold mb-2 text-white">Social Media Posting</h3>
+        <p class="text-base" style="color:rgba(255,255,255,.6)">Professional posts that keep JR-Tech visible and build trust with buyers.</p>
         <span class="inline-flex items-center gap-2 mt-4 text-xs font-semibold" style="color:#86CADA">Explore <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></span>
       </a>
 
@@ -207,8 +215,8 @@ tailwind.config={theme:{extend:{colors:{steel:{'DEFAULT':'#080C18','light':'#0F1
         <div class="ov-ic">
           <svg width="30" height="30" fill="none" stroke="#60AFCF" stroke-width="1.5" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 9h20"/><circle cx="5.5" cy="6.5" r=".6" fill="#86CADA"/><circle cx="7.8" cy="6.5" r=".6" fill="#86CADA"/></svg>
         </div>
-        <h3 class="text-xl font-bold mb-2 text-white">Website</h3>
-        <p class="text-sm" style="color:rgba(255,255,255,.6)">A professional digital storefront that wins credibility and converts searchers.</p>
+        <h3 class="text-2xl font-extrabold mb-2 text-white">Website</h3>
+        <p class="text-base" style="color:rgba(255,255,255,.6)">A professional digital storefront that wins credibility and converts searchers.</p>
         <span class="inline-flex items-center gap-2 mt-4 text-xs font-semibold" style="color:#86CADA">Explore <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></span>
       </a>
 
@@ -217,8 +225,8 @@ tailwind.config={theme:{extend:{colors:{steel:{'DEFAULT':'#080C18','light':'#0F1
         <div class="ov-ic">
           <svg width="30" height="30" fill="none" stroke="#60AFCF" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><circle cx="18.5" cy="5" r=".9" fill="#86CADA"/><circle cx="5.5" cy="18" r=".9" fill="#86CADA"/></svg>
         </div>
-        <h3 class="text-xl font-bold mb-2 text-white">AI Video &amp; Image Generation</h3>
-        <p class="text-sm" style="color:rgba(255,255,255,.6)">Professional product visuals and demo videos — created fast and affordably with AI.</p>
+        <h3 class="text-2xl font-extrabold mb-2 text-white">AI Video &amp; Image Generation</h3>
+        <p class="text-base" style="color:rgba(255,255,255,.6)">Professional product visuals and demo videos — created fast and affordably with AI.</p>
         <span class="inline-flex items-center gap-2 mt-4 text-xs font-semibold" style="color:#86CADA">Explore <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></span>
       </a>
 
@@ -231,9 +239,9 @@ tailwind.config={theme:{extend:{colors:{steel:{'DEFAULT':'#080C18','light':'#0F1
   <div class="max-w-6xl mx-auto">
     <div class="text-center mb-4 reveal">
       <p class="focus-eyebrow" style="color:#60AFCF">01 · Social Media Posting</p>
-      <h2 class="focus-h mt-3 mb-4" style="color:#080C18">Show Up Where Buyers Are</h2>
+      <h2 class="focus-h flow flow-l mt-3 mb-4">Show Up Where Buyers Are</h2>
       <div class="orange-bar mx-auto mb-6"></div>
-      <p class="max-w-2xl mx-auto mb-7" style="color:#4A4A5F;font-size:1.05rem;line-height:1.8">A steady stream of professional, on-brand posts keeps JR-Tech top-of-mind — building trust with F&amp;B operators and procurement managers long before the first sales call.</p>
+      <p class="max-w-2xl mx-auto mb-7" style="color:#4A4A5F;font-size:1.2rem;line-height:1.8">A steady stream of professional, on-brand posts keeps JR-Tech top-of-mind — building trust with F&amp;B operators and procurement managers long before the first sales call.</p>
       <div class="chip-row mb-2">
         <span class="bchip" style="color:#3E8FAF"><span class="dot"></span>Brand Authority</span>
         <span class="bchip" style="color:#3E8FAF"><span class="dot"></span>Real Projects Shown</span>
@@ -291,9 +299,9 @@ tailwind.config={theme:{extend:{colors:{steel:{'DEFAULT':'#080C18','light':'#0F1
   <div class="max-w-5xl mx-auto">
     <div class="text-center mb-4 reveal">
       <p class="focus-eyebrow" style="color:#86CADA">02 · Website</p>
-      <h2 class="focus-h mt-3 mb-4 text-white">A Digital Storefront That Sells</h2>
+      <h2 class="focus-h flow flow-d mt-3 mb-4">A Digital Storefront That Sells</h2>
       <div class="orange-bar mx-auto mb-6"></div>
-      <p class="max-w-2xl mx-auto mb-7 text-white/70" style="font-size:1.05rem;line-height:1.8">A modern, professional website is JR-Tech's best salesperson — working 24/7 to win credibility, showcase products, and turn online searchers into quote requests.</p>
+      <p class="max-w-2xl mx-auto mb-7 text-white/70" style="font-size:1.2rem;line-height:1.8">A modern, professional website is JR-Tech's best salesperson — working 24/7 to win credibility, showcase products, and turn online searchers into quote requests.</p>
       <div class="chip-row mb-2">
         <span class="bchip" style="color:#86CADA"><span class="dot"></span>Instant Credibility</span>
         <span class="bchip" style="color:#86CADA"><span class="dot"></span>Converts to Leads</span>
@@ -339,9 +347,9 @@ tailwind.config={theme:{extend:{colors:{steel:{'DEFAULT':'#080C18','light':'#0F1
   <div class="max-w-6xl mx-auto">
     <div class="text-center mb-4 reveal">
       <p class="focus-eyebrow" style="color:#60AFCF">03 · AI Video &amp; Image Generation</p>
-      <h2 class="focus-h mt-3 mb-4" style="color:#080C18">Studio-Quality Content, Without the Studio</h2>
+      <h2 class="focus-h flow flow-l mt-3 mb-4">Studio-Quality Content, Without the Studio</h2>
       <div class="orange-bar mx-auto mb-6"></div>
-      <p class="max-w-2xl mx-auto mb-7" style="color:#4A4A5F;font-size:1.05rem;line-height:1.8">AI produces professional product visuals and demo videos at a fraction of the usual cost and time — bringing MegCook, J-Nox and JR-Tech's full range to life without expensive shoots.</p>
+      <p class="max-w-2xl mx-auto mb-7" style="color:#4A4A5F;font-size:1.2rem;line-height:1.8">AI produces professional product visuals and demo videos at a fraction of the usual cost and time — bringing MegCook, J-Nox and JR-Tech's full range to life without expensive shoots.</p>
       <div class="chip-row mb-2">
         <span class="bchip" style="color:#3E8FAF"><span class="dot"></span>Fast Turnaround</span>
         <span class="bchip" style="color:#3E8FAF"><span class="dot"></span>Affordable</span>
@@ -376,8 +384,8 @@ tailwind.config={theme:{extend:{colors:{steel:{'DEFAULT':'#080C18','light':'#0F1
   <div class="absolute inset-0 dot-bg opacity-30"></div>
   <div class="max-w-3xl mx-auto text-center relative z-10 reveal">
     <p class="label-ornament text-[11px] tracking-[.3em] uppercase mb-5" style="color:#86CADA">The Vision</p>
-    <h2 class="focus-h text-white mb-6 tech-glow">Social. Website. AI Content. One Brand, Everywhere.</h2>
-    <p class="text-white/65 max-w-2xl mx-auto" style="font-size:1.1rem;line-height:1.8">
+    <h2 class="focus-h flow flow-d reflect mb-6">Social. Website. AI Content. One Brand, Everywhere.</h2>
+    <p class="text-white/70 max-w-2xl mx-auto" style="font-size:1.25rem;line-height:1.8">
       Together, these three pillars put JR-Tech's 16-year reputation in front of the right buyers — consistently, professionally, and at scale. For the full market context behind this strategy, see the
       <a href="market-research.html" style="color:#86CADA;text-decoration:underline;text-underline-offset:3px">market research</a>.
     </p>
