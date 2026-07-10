@@ -222,3 +222,18 @@ h2[style*="Open Sans"]{font-size:clamp(2rem,4.6vw,3.4rem)!important;line-height:
 .ov-card,.tilt,.post-card,.ai-tile,.browser,.video-ph,.opp-card,.stat-tile{transform-style:preserve-3d;will-change:transform}
 .ov-card>*:not(.spot),.opp-card>*:not(.spot){position:relative;z-index:1}
 .ov-card:hover .spot,.opp-card:hover .spot{opacity:1}
+
+/* ── Mobile hamburger nav ── */
+.nav-toggle{display:none;flex-direction:column;justify-content:center;gap:5px;width:42px;height:42px;padding:0;border:1px solid rgba(156,186,227,.28);border-radius:10px;background:rgba(156,186,227,.06);cursor:pointer;flex-shrink:0}
+.nav-toggle span{display:block;width:20px;height:2px;margin:0 auto;border-radius:2px;background:#BFD5F0;transition:transform .3s ease,opacity .25s ease}
+.nav-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-toggle.open span:nth-child(2){opacity:0}
+.nav-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+@media(max-width:767px){
+  .nav-toggle{display:flex}
+  #navLinks{position:absolute;top:calc(100% + 14px);right:0;flex-direction:column;align-items:stretch;gap:2px!important;min-width:200px;padding:8px;background:rgba(8,12,24,.97);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(156,186,227,.18);border-radius:12px;box-shadow:0 22px 54px rgba(0,0,0,.55);opacity:0;transform:translateY(-8px) scale(.98);transform-origin:top right;pointer-events:none;transition:opacity .28s ease,transform .28s ease}
+  #navLinks.open{opacity:1;transform:translateY(0) scale(1);pointer-events:auto}
+  #navLinks a{padding:12px 14px;border-radius:8px;font-size:14px}
+  #navLinks a::after{display:none!important}
+  #navLinks a:hover{background:rgba(156,186,227,.09)}
+}

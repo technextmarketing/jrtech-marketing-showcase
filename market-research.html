@@ -12,7 +12,7 @@
 <script>
 tailwind.config={theme:{extend:{colors:{steel:{'DEFAULT':'#080C18','light':'#0F1528','mid':'#141A32'},metal:{'DEFAULT':'#9CBAE3','light':'#BFD5F0','pale':'#EEF3FB'},silver:{'DEFAULT':'#F8F9FC','dark':'#EEF2F8','deeper':'#E2E8F4'}},fontFamily:{display:['Open Sans','system-ui','sans-serif'],body:['Open Sans','system-ui','sans-serif'],alt:['Bebas Neue','cursive','sans-serif']}}}}
 </script>
-<link rel="stylesheet" href="styles.css?v=5"/>
+<link rel="stylesheet" href="styles.css?v=6"/>
 <style>
 /* ── Page-specific additions ── */
 .mr-hero{background:linear-gradient(160deg,#060A15 0%,#0A1020 50%,#080C18 100%);min-height:48vh;display:flex;align-items:center;padding:110px 24px 72px;position:relative;overflow:hidden}
@@ -77,14 +77,15 @@ tailwind.config={theme:{extend:{colors:{steel:{'DEFAULT':'#080C18','light':'#0F1
 
 <!-- NAV -->
 <nav class="fixed top-0 left-0 right-0 z-50 px-6 lg:px-12 py-4" id="nav" style="background:rgba(8,12,24,.55);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid rgba(156,186,227,.18)">
-  <div class="max-w-6xl mx-auto flex items-center justify-between">
+  <div class="max-w-6xl mx-auto flex items-center justify-between relative">
     <a href="https://technextsg.github.io/jrtech-website/" target="_blank" style="text-decoration:none;display:flex;align-items:center">
       <img src="https://technextsg.github.io/jrtech-website/img/JR-Tech-Logo_Final-white.png" alt="JR-Tech Solution Sdn. Bhd." style="height:38px;width:auto">
     </a>
-    <div class="flex items-center gap-4 md:gap-8">
+    <div id="navLinks" class="flex items-center gap-4 md:gap-8">
       <a href="index.html" class="nav-page">Showcase</a>
       <a href="market-research.html" class="nav-page nav-current">Market Research</a>
     </div>
+    <button id="navToggle" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </nav>
 
@@ -951,6 +952,6 @@ tailwind.config={theme:{extend:{colors:{steel:{'DEFAULT':'#080C18','light':'#0F1
   </div>
 </section>
 
-<script src="app.js?v=5" defer></script>
+<script src="app.js?v=6" defer></script>
 </body>
 </html>

@@ -113,4 +113,14 @@ document.querySelectorAll('.btn').forEach(function(b){
     card.addEventListener('click',function(){t.scrollIntoView({behavior:reduce?'auto':'smooth',block:'start'});});
   });
 })();
+
+// ── Mobile hamburger nav ──
+(function(){
+  var t=document.getElementById('navToggle'), l=document.getElementById('navLinks');
+  if(!t||!l)return;
+  function close(){l.classList.remove('open');t.classList.remove('open');t.setAttribute('aria-expanded','false');}
+  t.addEventListener('click',function(e){e.stopPropagation();var o=!l.classList.contains('open');l.classList.toggle('open',o);t.classList.toggle('open',o);t.setAttribute('aria-expanded',o);});
+  l.querySelectorAll('a').forEach(function(a){a.addEventListener('click',close);});
+  document.addEventListener('click',function(e){if(!l.contains(e.target)&&!t.contains(e.target))close();});
+})();
 })();
