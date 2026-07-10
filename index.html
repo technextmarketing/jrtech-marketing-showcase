@@ -80,6 +80,9 @@ tailwind.config={theme:{extend:{colors:{steel:{'DEFAULT':'#080C18','light':'#0F1
 .site-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;padding:8px 26px 34px}
 .site-card{border-radius:11px;border:1px solid rgba(156,186,227,.14);background:rgba(156,186,227,.05);padding:16px;transition:transform .4s ease,background .4s ease}
 .browser:hover .site-card{transform:translateY(-4px);background:rgba(156,186,227,.09)}
+.site-frame{position:relative;height:620px;background:#fff;overflow:hidden}
+.site-frame iframe{width:100%;height:100%;border:0;display:block}
+@media(max-width:640px){.site-frame{height:440px}}
 
 /* ── AI galleries ── */
 .gal{position:relative;border-radius:14px;overflow:hidden;border:1px solid rgba(156,186,227,.18);aspect-ratio:1/1;background:linear-gradient(135deg,rgba(156,186,227,.14),rgba(156,186,227,.02));transition:transform .55s cubic-bezier(.34,1.4,.64,1),box-shadow .55s ease,border-color .4s ease}
@@ -309,35 +312,21 @@ tailwind.config={theme:{extend:{colors:{steel:{'DEFAULT':'#080C18','light':'#0F1
       </div>
     </div>
 
-    <!-- Placeholder: 1 whole website view -->
+    <!-- Live JR-Tech website embed -->
     <div class="relative reveal mt-6">
-      <span class="ph-tag">PLACEHOLDER · 1 WEBSITE</span>
-      <div class="browser tilt shine float">
+      <span class="ph-tag">LIVE PREVIEW</span>
+      <div class="browser shine">
         <div class="browser-bar">
           <span class="bdot" style="background:#ff5f57"></span>
           <span class="bdot" style="background:#febc2e"></span>
           <span class="bdot" style="background:#28c840"></span>
-          <span class="browser-url">jrtechsolution.com</span>
+          <span class="browser-url">technextsg.github.io/jrtech-website</span>
         </div>
-        <div class="site">
-          <div class="site-nav">
-            <div class="blk" style="width:78px;height:16px;background:rgba(191,213,240,.5)"></div>
-            <div style="display:flex;gap:16px"><div class="blk dim" style="width:44px;height:9px"></div><div class="blk dim" style="width:44px;height:9px"></div><div class="blk dim" style="width:44px;height:9px"></div><div class="blk" style="width:60px;height:22px;background:linear-gradient(135deg,#5E7FB8,#BFD5F0)"></div></div>
-          </div>
-          <div class="site-hero">
-            <div class="blk" style="height:20px;width:64%;margin:0 auto 12px"></div>
-            <div class="blk dim" style="height:11px;width:44%;margin:0 auto 8px"></div>
-            <div class="blk dim" style="height:11px;width:38%;margin:0 auto 22px"></div>
-            <div class="site-cta"></div>
-          </div>
-          <div class="site-cards">
-            <div class="site-card"><div class="blk" style="height:60px;margin-bottom:12px;background:rgba(156,186,227,.12)"></div><div class="blk" style="height:9px;width:70%;margin-bottom:7px"></div><div class="blk dim" style="height:7px;width:90%"></div></div>
-            <div class="site-card"><div class="blk" style="height:60px;margin-bottom:12px;background:rgba(156,186,227,.12)"></div><div class="blk" style="height:9px;width:70%;margin-bottom:7px"></div><div class="blk dim" style="height:7px;width:90%"></div></div>
-            <div class="site-card"><div class="blk" style="height:60px;margin-bottom:12px;background:rgba(156,186,227,.12)"></div><div class="blk" style="height:9px;width:70%;margin-bottom:7px"></div><div class="blk dim" style="height:7px;width:90%"></div></div>
-          </div>
+        <div class="site-frame">
+          <iframe src="https://technextsg.github.io/jrtech-website/index.html" title="JR-Tech Solution website" loading="lazy"></iframe>
         </div>
       </div>
-      <p class="ph-cap">Full website view — actual design to be added</p>
+      <p class="ph-cap">Live preview of the JR-Tech website — <a href="https://technextsg.github.io/jrtech-website/index.html" target="_blank" rel="noopener" style="color:#5E7FB8;text-decoration:underline;text-underline-offset:2px">open in a new tab</a></p>
     </div>
   </div>
 </section>
