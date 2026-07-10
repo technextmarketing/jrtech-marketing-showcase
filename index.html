@@ -56,9 +56,13 @@ tailwind.config={theme:{extend:{colors:{steel:{'DEFAULT':'#080C18','light':'#0F1
 .post-head{display:flex;align-items:center;gap:10px;padding:13px 15px}
 .post-ava{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#5E7FB8,#BFD5F0);flex-shrink:0}
 .post-plat{margin-left:auto;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:#BFD5F0;border:1px solid rgba(156,186,227,.3);border-radius:5px;padding:3px 8px}
-.post-media{background:linear-gradient(135deg,rgba(156,186,227,.14),rgba(156,186,227,.03));border-block:1px solid rgba(156,186,227,.1);display:flex;align-items:center;justify-content:center;color:rgba(191,213,240,.45);overflow:hidden}
+.post-media{aspect-ratio:1/1;background:linear-gradient(135deg,rgba(156,186,227,.14),rgba(156,186,227,.03));border-block:1px solid rgba(156,186,227,.1);display:flex;align-items:center;justify-content:center;color:rgba(191,213,240,.45);overflow:hidden}
 .post-media svg{transition:transform .6s cubic-bezier(.34,1.3,.64,1)}
 .post-card:hover .post-media svg{transform:scale(1.12) rotate(3deg)}
+.post-media img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s cubic-bezier(.34,1.3,.64,1)}
+.post-card:hover .post-media img{transform:scale(1.07)}
+.pname{font-size:12px;font-weight:700;color:#fff;line-height:1.15;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.phandle{font-size:10px;color:rgba(255,255,255,.42);line-height:1.2}
 .post-body{padding:13px 15px}
 .ln{height:8px;border-radius:4px;background:rgba(255,255,255,.08);margin-bottom:9px}
 .post-foot{display:flex;gap:18px;padding:2px 15px 15px;color:rgba(191,213,240,.5)}
@@ -255,47 +259,71 @@ tailwind.config={theme:{extend:{colors:{steel:{'DEFAULT':'#080C18','light':'#0F1
       </div>
     </div>
 
-    <!-- Placeholder: 5 social posts -->
+    <!-- 12 product posts · 4-column grid -->
     <div class="relative reveal">
-      <span class="ph-tag">PLACEHOLDER · 5 POSTS</span>
-      <div class="masonry mt-4">
-        <!-- Post 1 -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-5 mt-4">
         <div class="post-card tilt shine">
-          <div class="post-head"><div class="post-ava"></div><div><div class="ln" style="width:80px;margin-bottom:5px"></div><div class="ln" style="width:48px;height:6px;margin:0"></div></div><span class="post-plat">LinkedIn</span></div>
-          <div class="post-media" style="aspect-ratio:4/3"><svg width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.2" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.8"/><path d="M21 15l-5-5L5 21"/></svg></div>
-          <div class="post-body"><div class="ln" style="width:100%"></div><div class="ln" style="width:82%"></div></div>
+          <div class="post-head"><div class="post-ava"></div><div class="flex-1 min-w-0"><p class="pname">JR-Tech Solution</p><p class="phandle">Sponsored</p></div><span class="post-plat">LinkedIn</span></div>
+          <div class="post-media"><img src="assets/social/1.jpg" alt="JR-Tech commercial kitchen equipment" loading="lazy"></div>
           <div class="post-foot"><svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path d="M20.8 8.6a5.5 5.5 0 00-9.8-3.4A5.5 5.5 0 003.2 8.6c0 4.3 8.3 9.9 8.8 9.9s8.8-5.6 8.8-9.9z"/></svg><svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg><svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path d="M4 12v8h16v-8M16 6l-4-4-4 4M12 2v14"/></svg></div>
         </div>
-        <!-- Post 2 -->
         <div class="post-card tilt shine">
-          <div class="post-head"><div class="post-ava"></div><div><div class="ln" style="width:70px;margin-bottom:5px"></div><div class="ln" style="width:44px;height:6px;margin:0"></div></div><span class="post-plat">Instagram</span></div>
-          <div class="post-media" style="aspect-ratio:1/1"><svg width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.2" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.8"/><path d="M21 15l-5-5L5 21"/></svg></div>
-          <div class="post-body"><div class="ln" style="width:100%"></div><div class="ln" style="width:60%"></div></div>
-          <div class="post-foot"><svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path d="M20.8 8.6a5.5 5.5 0 00-9.8-3.4A5.5 5.5 0 003.2 8.6c0 4.3 8.3 9.9 8.8 9.9s8.8-5.6 8.8-9.9z"/></svg><svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
-        </div>
-        <!-- Post 3 -->
-        <div class="post-card tilt shine">
-          <div class="post-head"><div class="post-ava"></div><div><div class="ln" style="width:76px;margin-bottom:5px"></div><div class="ln" style="width:40px;height:6px;margin:0"></div></div><span class="post-plat">Facebook</span></div>
-          <div class="post-media" style="aspect-ratio:16/10"><svg width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M10 9l5 3-5 3z" fill="currentColor" stroke="none"/></svg></div>
-          <div class="post-body"><div class="ln" style="width:100%"></div><div class="ln" style="width:74%"></div></div>
+          <div class="post-head"><div class="post-ava"></div><div class="flex-1 min-w-0"><p class="pname">JR-Tech Solution</p><p class="phandle">2h · Sponsored</p></div><span class="post-plat">Instagram</span></div>
+          <div class="post-media"><img src="assets/social/2.jpg" alt="JR-Tech commercial kitchen equipment" loading="lazy"></div>
           <div class="post-foot"><svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path d="M20.8 8.6a5.5 5.5 0 00-9.8-3.4A5.5 5.5 0 003.2 8.6c0 4.3 8.3 9.9 8.8 9.9s8.8-5.6 8.8-9.9z"/></svg><svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg><svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path d="M4 12v8h16v-8M16 6l-4-4-4 4M12 2v14"/></svg></div>
         </div>
-        <!-- Post 4 -->
         <div class="post-card tilt shine">
-          <div class="post-head"><div class="post-ava"></div><div><div class="ln" style="width:66px;margin-bottom:5px"></div><div class="ln" style="width:46px;height:6px;margin:0"></div></div><span class="post-plat">LinkedIn</span></div>
-          <div class="post-media" style="aspect-ratio:1/1"><svg width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.2" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.8"/><path d="M21 15l-5-5L5 21"/></svg></div>
-          <div class="post-body"><div class="ln" style="width:100%"></div><div class="ln" style="width:88%"></div><div class="ln" style="width:55%"></div></div>
-          <div class="post-foot"><svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path d="M20.8 8.6a5.5 5.5 0 00-9.8-3.4A5.5 5.5 0 003.2 8.6c0 4.3 8.3 9.9 8.8 9.9s8.8-5.6 8.8-9.9z"/></svg><svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
+          <div class="post-head"><div class="post-ava"></div><div class="flex-1 min-w-0"><p class="pname">JR-Tech Solution</p><p class="phandle">Sponsored</p></div><span class="post-plat">Facebook</span></div>
+          <div class="post-media"><img src="assets/social/3.jpg" alt="JR-Tech commercial kitchen equipment" loading="lazy"></div>
+          <div class="post-foot"><svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path d="M20.8 8.6a5.5 5.5 0 00-9.8-3.4A5.5 5.5 0 003.2 8.6c0 4.3 8.3 9.9 8.8 9.9s8.8-5.6 8.8-9.9z"/></svg><svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg><svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path d="M4 12v8h16v-8M16 6l-4-4-4 4M12 2v14"/></svg></div>
         </div>
-        <!-- Post 5 -->
         <div class="post-card tilt shine">
-          <div class="post-head"><div class="post-ava"></div><div><div class="ln" style="width:72px;margin-bottom:5px"></div><div class="ln" style="width:42px;height:6px;margin:0"></div></div><span class="post-plat">Instagram</span></div>
-          <div class="post-media" style="aspect-ratio:4/5"><svg width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.2" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.8"/><path d="M21 15l-5-5L5 21"/></svg></div>
-          <div class="post-body"><div class="ln" style="width:100%"></div><div class="ln" style="width:70%"></div></div>
+          <div class="post-head"><div class="post-ava"></div><div class="flex-1 min-w-0"><p class="pname">JR-Tech Solution</p><p class="phandle">1d · Sponsored</p></div><span class="post-plat">LinkedIn</span></div>
+          <div class="post-media"><img src="assets/social/4.jpg" alt="JR-Tech commercial kitchen equipment" loading="lazy"></div>
+          <div class="post-foot"><svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path d="M20.8 8.6a5.5 5.5 0 00-9.8-3.4A5.5 5.5 0 003.2 8.6c0 4.3 8.3 9.9 8.8 9.9s8.8-5.6 8.8-9.9z"/></svg><svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg><svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path d="M4 12v8h16v-8M16 6l-4-4-4 4M12 2v14"/></svg></div>
+        </div>
+        <div class="post-card tilt shine">
+          <div class="post-head"><div class="post-ava"></div><div class="flex-1 min-w-0"><p class="pname">JR-Tech Solution</p><p class="phandle">Sponsored</p></div><span class="post-plat">Instagram</span></div>
+          <div class="post-media"><img src="assets/social/5.jpg" alt="JR-Tech commercial kitchen equipment" loading="lazy"></div>
+          <div class="post-foot"><svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path d="M20.8 8.6a5.5 5.5 0 00-9.8-3.4A5.5 5.5 0 003.2 8.6c0 4.3 8.3 9.9 8.8 9.9s8.8-5.6 8.8-9.9z"/></svg><svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg><svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path d="M4 12v8h16v-8M16 6l-4-4-4 4M12 2v14"/></svg></div>
+        </div>
+        <div class="post-card tilt shine">
+          <div class="post-head"><div class="post-ava"></div><div class="flex-1 min-w-0"><p class="pname">JR-Tech Solution</p><p class="phandle">3h · Sponsored</p></div><span class="post-plat">Facebook</span></div>
+          <div class="post-media"><img src="assets/social/6.jpg" alt="JR-Tech commercial kitchen equipment" loading="lazy"></div>
+          <div class="post-foot"><svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path d="M20.8 8.6a5.5 5.5 0 00-9.8-3.4A5.5 5.5 0 003.2 8.6c0 4.3 8.3 9.9 8.8 9.9s8.8-5.6 8.8-9.9z"/></svg><svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg><svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path d="M4 12v8h16v-8M16 6l-4-4-4 4M12 2v14"/></svg></div>
+        </div>
+        <div class="post-card tilt shine">
+          <div class="post-head"><div class="post-ava"></div><div class="flex-1 min-w-0"><p class="pname">JR-Tech Solution</p><p class="phandle">Sponsored</p></div><span class="post-plat">LinkedIn</span></div>
+          <div class="post-media"><img src="assets/social/7.jpg" alt="JR-Tech commercial kitchen equipment" loading="lazy"></div>
+          <div class="post-foot"><svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path d="M20.8 8.6a5.5 5.5 0 00-9.8-3.4A5.5 5.5 0 003.2 8.6c0 4.3 8.3 9.9 8.8 9.9s8.8-5.6 8.8-9.9z"/></svg><svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg><svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path d="M4 12v8h16v-8M16 6l-4-4-4 4M12 2v14"/></svg></div>
+        </div>
+        <div class="post-card tilt shine">
+          <div class="post-head"><div class="post-ava"></div><div class="flex-1 min-w-0"><p class="pname">JR-Tech Solution</p><p class="phandle">5h · Sponsored</p></div><span class="post-plat">Instagram</span></div>
+          <div class="post-media"><img src="assets/social/8.jpg" alt="JR-Tech commercial kitchen equipment" loading="lazy"></div>
+          <div class="post-foot"><svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path d="M20.8 8.6a5.5 5.5 0 00-9.8-3.4A5.5 5.5 0 003.2 8.6c0 4.3 8.3 9.9 8.8 9.9s8.8-5.6 8.8-9.9z"/></svg><svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg><svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path d="M4 12v8h16v-8M16 6l-4-4-4 4M12 2v14"/></svg></div>
+        </div>
+        <div class="post-card tilt shine">
+          <div class="post-head"><div class="post-ava"></div><div class="flex-1 min-w-0"><p class="pname">JR-Tech Solution</p><p class="phandle">Sponsored</p></div><span class="post-plat">Facebook</span></div>
+          <div class="post-media"><img src="assets/social/9.jpg" alt="JR-Tech commercial kitchen equipment" loading="lazy"></div>
+          <div class="post-foot"><svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path d="M20.8 8.6a5.5 5.5 0 00-9.8-3.4A5.5 5.5 0 003.2 8.6c0 4.3 8.3 9.9 8.8 9.9s8.8-5.6 8.8-9.9z"/></svg><svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg><svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path d="M4 12v8h16v-8M16 6l-4-4-4 4M12 2v14"/></svg></div>
+        </div>
+        <div class="post-card tilt shine">
+          <div class="post-head"><div class="post-ava"></div><div class="flex-1 min-w-0"><p class="pname">JR-Tech Solution</p><p class="phandle">1d · Sponsored</p></div><span class="post-plat">LinkedIn</span></div>
+          <div class="post-media"><img src="assets/social/10.jpg" alt="JR-Tech commercial kitchen equipment" loading="lazy"></div>
+          <div class="post-foot"><svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path d="M20.8 8.6a5.5 5.5 0 00-9.8-3.4A5.5 5.5 0 003.2 8.6c0 4.3 8.3 9.9 8.8 9.9s8.8-5.6 8.8-9.9z"/></svg><svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg><svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path d="M4 12v8h16v-8M16 6l-4-4-4 4M12 2v14"/></svg></div>
+        </div>
+        <div class="post-card tilt shine">
+          <div class="post-head"><div class="post-ava"></div><div class="flex-1 min-w-0"><p class="pname">JR-Tech Solution</p><p class="phandle">Sponsored</p></div><span class="post-plat">Instagram</span></div>
+          <div class="post-media"><img src="assets/social/11.jpg" alt="JR-Tech commercial kitchen equipment" loading="lazy"></div>
+          <div class="post-foot"><svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path d="M20.8 8.6a5.5 5.5 0 00-9.8-3.4A5.5 5.5 0 003.2 8.6c0 4.3 8.3 9.9 8.8 9.9s8.8-5.6 8.8-9.9z"/></svg><svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg><svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path d="M4 12v8h16v-8M16 6l-4-4-4 4M12 2v14"/></svg></div>
+        </div>
+        <div class="post-card tilt shine">
+          <div class="post-head"><div class="post-ava"></div><div class="flex-1 min-w-0"><p class="pname">JR-Tech Solution</p><p class="phandle">6h · Sponsored</p></div><span class="post-plat">Facebook</span></div>
+          <div class="post-media"><img src="assets/social/12.jpg" alt="JR-Tech commercial kitchen equipment" loading="lazy"></div>
           <div class="post-foot"><svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path d="M20.8 8.6a5.5 5.5 0 00-9.8-3.4A5.5 5.5 0 003.2 8.6c0 4.3 8.3 9.9 8.8 9.9s8.8-5.6 8.8-9.9z"/></svg><svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg><svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path d="M4 12v8h16v-8M16 6l-4-4-4 4M12 2v14"/></svg></div>
         </div>
       </div>
-      <p class="ph-cap">5 sample social posts — actual content to be added</p>
+      <p class="ph-cap">Sample posts featuring JR-Tech's commercial kitchen range — 12 products</p>
     </div>
   </div>
 </section>
